@@ -81,14 +81,37 @@ func makeIncrementer() -> ((Int) -> Int) {
 var increment = makeIncrementer()
 increment(7)
 
+//function call other function
 func test(array: [Int]) -> Int{
     return array[0]
 }
 
-func nestedFunc(numbers: Int...) -> Int {
+func funcCallFunc(numbers: Int...) -> Int {
     return test(array: numbers)
     
 }
 
-nestedFunc(numbers: 1,2,3)
+funcCallFunc(numbers: 1,2,3)
+
+
+//function can take another function as one of its arguments.
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+
+func biggerThanAHundred(number: Int) -> Bool {
+    
+}
+var numbers = [20, 19, 7, 12]
+hasAnyMatches(list: numbers, condition: lessThanTen)
+
+
 
