@@ -51,6 +51,13 @@ for score in individualScores { //for item in array
     }
 }
 
+var total = 0
+for i in 0..<4 { // i = 0,1,2,3
+    total += 1
+}
+print(total)
+
+
 
 //optional value
 var optionalString: String? = "Hello"
@@ -107,3 +114,15 @@ for (kind, numbers) in interestingNumbers { // loop to each key-value pair in di
 print(largest)
 
 
+//while & repeat
+var n = 2
+while n < 100 {
+    n = n * 2
+}
+print(n)
+
+var m = 2
+repeat {
+    m = m * 2
+} while m < 100
+print(m)
