@@ -108,10 +108,31 @@ func lessThanTen(number: Int) -> Bool {
 }
 
 func biggerThanAHundred(number: Int) -> Bool {
-    
+    return number > 100
 }
-var numbers = [20, 19, 7, 12]
-hasAnyMatches(list: numbers, condition: lessThanTen)
+var numbers = [20, 19, 7, 88]
+hasAnyMatches(list: numbers, condition: biggerThanAHundred)
+
+//Closure
+numbers.map({ //increase all number 3 times
+    (number: Int) -> Int in
+    let result = 3 * number
+    return result
+})
+
+numbers.map({ //return 0 for all odd numbers
+    (number: Int) -> Int in
+    if(number % 2 != 0){
+        return 0
+    }
+    return 1
+})
 
 
+
+let mappedNumbers = numbers.map({ number in 3 * number })
+print(mappedNumbers)
+
+let sortedNumbers = numbers.sorted { $0 > $1 }
+print(sortedNumbers)
 
