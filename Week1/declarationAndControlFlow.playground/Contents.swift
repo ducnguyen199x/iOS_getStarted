@@ -65,7 +65,7 @@ print(optionalString == nil)
 
 var optionalName: String? = nil// ? --> work with value that might be missing
 var greeting = "Hello!"
-if let name = optionalName { // if name is not missing (if let)
+if let name = optionalName { // if name is not missing
     greeting = "Hello, \(name)"
 }
 else{ // if name is missing
