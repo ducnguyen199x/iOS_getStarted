@@ -26,7 +26,6 @@ func send(job: Int, toPrinter printerName: String) throws -> String {
 //do-catch
 do {
     let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
-    
     try send(job: 1000, toPrinter: "Never Has Toner")
 } catch {
     print(error)
@@ -77,7 +76,8 @@ func makeArray<A>(repeating item: A, numberOfTimes: Int) -> [A] {
     }
     return result
 }
-makeArray(repeating: "knock", numberOfTimes:4)
+makeArray(repeating: "knock", numberOfTimes: 4)
+
 
 // Reimplement the Swift standard library's optional type
 enum OptionalValue<Wrapped> {

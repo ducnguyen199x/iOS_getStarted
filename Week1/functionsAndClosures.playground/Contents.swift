@@ -111,6 +111,7 @@ func biggerThanAHundred(number: Int) -> Bool {
     return number > 100
 }
 var numbers = [20, 19, 7, 88]
+
 hasAnyMatches(list: numbers, condition: biggerThanAHundred)
 
 //Closure
