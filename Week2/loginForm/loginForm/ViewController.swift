@@ -84,6 +84,8 @@ extension ViewController {
       alertController.message = "You have successfully logged in"
     }else {
       alertController.message = "Invalid credentials, please try again"
+      usernameTextField.text = ""
+      passwordTextField.text = ""
     }
     present(alertController, animated: true, completion:  nil)
   }
