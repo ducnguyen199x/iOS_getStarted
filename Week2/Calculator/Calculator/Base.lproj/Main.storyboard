@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jta-wt-I1x">
@@ -95,7 +95,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <state key="normal" title="C">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -114,12 +114,13 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                             <mask key="constraints">
                                                 <include reference="g9q-5R-e6U"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                             <mask key="constraints">
                                                 <include reference="g9q-5R-e6U"/>
                                                 <include reference="x9r-Gp-guV"/>
@@ -141,7 +142,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <state key="normal" title="+/-">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -160,12 +161,13 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                             <mask key="constraints">
                                                 <include reference="HJn-ob-OSx"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                             <mask key="constraints">
                                                 <include reference="HJn-ob-OSx"/>
                                                 <include reference="jcR-UU-Rgg"/>
@@ -187,7 +189,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="/">
                                             <color key="titleColor" red="0.98613516115320499" green="0.98960137086490374" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -200,17 +202,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="RFV-y4-76M"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="RFV-y4-76M"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="5NC-NK-Pm7"/>
                                                 <include reference="RFV-y4-76M"/>
@@ -232,7 +236,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <state key="normal" title="%">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -251,12 +255,13 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                             <mask key="constraints">
                                                 <include reference="Cmz-pg-1FI"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                             <mask key="constraints">
                                                 <include reference="Cmz-pg-1FI"/>
                                                 <include reference="Enn-GQ-aKA"/>
@@ -278,7 +283,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -291,17 +296,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="Ljp-V0-aK4"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="Ljp-V0-aK4"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="Ljp-V0-aK4"/>
                                                 <include reference="VPJ-0O-vd5"/>
@@ -323,7 +330,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="8">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -336,17 +343,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="pqz-jW-DPT"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="pqz-jW-DPT"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="Al4-9l-7gf"/>
                                                 <include reference="pqz-jW-DPT"/>
@@ -368,7 +377,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="x">
                                             <color key="titleColor" red="0.98613516115320499" green="0.98960137086490374" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -381,17 +390,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="FQD-sH-w1c"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="FQD-sH-w1c"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="FQD-sH-w1c"/>
                                                 <include reference="qo8-mp-nHj"/>
@@ -413,7 +424,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="9">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -426,17 +437,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="6XE-C0-lQU"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="6XE-C0-lQU"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="6XE-C0-lQU"/>
                                                 <include reference="sk7-yS-4Uc"/>
@@ -458,7 +471,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -471,17 +484,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="Fdl-UO-VAk"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="Fdl-UO-VAk"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="Fdl-UO-VAk"/>
                                                 <include reference="KHe-aL-CED"/>
@@ -503,7 +518,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -516,17 +531,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="QJc-OY-758"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="QJc-OY-758"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="QJc-OY-758"/>
                                                 <include reference="xCr-2W-WZY"/>
@@ -548,7 +565,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" red="0.98613516115320499" green="0.98960137086490374" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -561,17 +578,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="eA5-0r-szz"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="eA5-0r-szz"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="aeW-cD-o2E"/>
                                                 <include reference="eA5-0r-szz"/>
@@ -593,7 +612,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -606,17 +625,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="GPr-d5-dvh"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="GPr-d5-dvh"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="GPr-d5-dvh"/>
                                                 <include reference="cEd-ML-Mbx"/>
@@ -638,7 +659,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -651,17 +672,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="FVm-z2-bV3"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="FVm-z2-bV3"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="FVm-z2-bV3"/>
                                                 <include reference="tlM-Tn-lWE"/>
@@ -683,7 +706,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -696,17 +719,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="C0G-BQ-ZQO"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="C0G-BQ-ZQO"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="C0G-BQ-ZQO"/>
                                                 <include reference="p0D-La-Ggm"/>
@@ -728,7 +753,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" red="0.98613516115320499" green="0.98960137086490374" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -741,17 +766,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="TPZ-Qm-i0c"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="TPZ-Qm-i0c"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="OQS-3a-YbO"/>
                                                 <include reference="TPZ-Qm-i0c"/>
@@ -773,7 +800,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -786,17 +813,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="FrY-bV-oHw"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="FrY-bV-oHw"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="FrY-bV-oHw"/>
                                                 <include reference="qe1-Xf-XaD"/>
@@ -818,7 +847,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="=">
                                             <color key="titleColor" red="0.98613516115320499" green="0.98960137086490374" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -831,17 +860,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="zFb-yI-5ys"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="zFb-yI-5ys"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="rCI-1V-3VA"/>
                                                 <include reference="zFb-yI-5ys"/>
@@ -863,7 +894,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <state key="normal" title=".">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -881,12 +912,13 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                             <mask key="constraints">
                                                 <include reference="ivk-mC-oBX"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="M3C-NG-uRl"/>
                                                 <include reference="ivk-mC-oBX"/>
@@ -908,7 +940,7 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="360"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" red="0.069611378205128194" green="0.069611378205128194" blue="0.069611378205128194" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -921,12 +953,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <mask key="constraints">
                                                 <include reference="Qdy-KM-usp"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                             <mask key="constraints">
                                                 <include reference="Qdy-KM-usp"/>
                                                 <include reference="sFp-uv-J8e"/>
