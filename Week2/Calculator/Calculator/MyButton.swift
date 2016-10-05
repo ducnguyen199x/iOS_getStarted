@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@IBDesignable
 class MyButton : UIButton {
   @IBInspectable var borderWidth : CGFloat = 0 {
     didSet {
