@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F83691371DA60B0B0055B40F /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83691361DA60B0B0055B40F /* HistoryTableView.swift */; };
+		F83691371DA60B0B0055B40F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83691361DA60B0B0055B40F /* HistoryViewController.swift */; };
 		F836913B1DA60E0A0055B40F /* CalculationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836913A1DA60E0A0055B40F /* CalculationCell.swift */; };
+		F836913D1DA653D60055B40F /* HistoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836913C1DA653D60055B40F /* HistoryViewDelegate.swift */; };
 		F866317F1DA3A9F3004004E1 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F866317E1DA3A9F3004004E1 /* MyButton.swift */; };
 		F8F21B901DA356A200411440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F21B8F1DA356A200411440 /* AppDelegate.swift */; };
 		F8F21B921DA356A200411440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F21B911DA356A200411440 /* ViewController.swift */; };
@@ -37,8 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F83691361DA60B0B0055B40F /* HistoryTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableView.swift; sourceTree = "<group>"; };
+		F83691361DA60B0B0055B40F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		F836913A1DA60E0A0055B40F /* CalculationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculationCell.swift; path = ../CalculationCell.swift; sourceTree = "<group>"; };
+		F836913C1DA653D60055B40F /* HistoryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewDelegate.swift; sourceTree = "<group>"; };
 		F866317E1DA3A9F3004004E1 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		F8F21B8C1DA356A200411440 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F21B8F1DA356A200411440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				F8F21B8E1DA356A200411440 /* Calculator */,
-				F8F21BA31DA356A200411440 /* CalculatorTests */,
 				F8F21BAE1DA356A200411440 /* CalculatorUITests */,
 				F8F21B8D1DA356A200411440 /* Products */,
 			);
@@ -105,8 +106,10 @@
 			children = (
 				F8F21B8F1DA356A200411440 /* AppDelegate.swift */,
 				F8F21B911DA356A200411440 /* ViewController.swift */,
-				F83691361DA60B0B0055B40F /* HistoryTableView.swift */,
+				F83691361DA60B0B0055B40F /* HistoryViewController.swift */,
+				F836913C1DA653D60055B40F /* HistoryViewDelegate.swift */,
 				F836913A1DA60E0A0055B40F /* CalculationCell.swift */,
+				F8F21BA31DA356A200411440 /* CalculatorTests */,
 				F8F21B931DA356A200411440 /* Main.storyboard */,
 				F8F21B961DA356A200411440 /* Assets.xcassets */,
 				F8F21B981DA356A200411440 /* LaunchScreen.storyboard */,
@@ -123,7 +126,7 @@
 				F8F21BA61DA356A200411440 /* Info.plist */,
 			);
 			path = CalculatorTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		F8F21BAE1DA356A200411440 /* CalculatorUITests */ = {
 			isa = PBXGroup;
@@ -270,8 +273,9 @@
 			files = (
 				F8F21B921DA356A200411440 /* ViewController.swift in Sources */,
 				F8F21B901DA356A200411440 /* AppDelegate.swift in Sources */,
-				F83691371DA60B0B0055B40F /* HistoryTableView.swift in Sources */,
+				F83691371DA60B0B0055B40F /* HistoryViewController.swift in Sources */,
 				F836913B1DA60E0A0055B40F /* CalculationCell.swift in Sources */,
+				F836913D1DA653D60055B40F /* HistoryViewDelegate.swift in Sources */,
 				F866317F1DA3A9F3004004E1 /* MyButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

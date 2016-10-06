@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIApplicationDelegate, HistoryViewDelegate {
   
   var firstNumber: Double = 0
   var secondNumber: Double = 0
   var expression = "no"
   var startNew = true
+  let historyDefaults = UserDefaults.standard
   var historyArray = [String]()
 
   @IBOutlet var resultLabel: UILabel!
@@ -89,17 +90,31 @@ class ViewController: UIViewController {
   }
 
   override func viewDidLoad() {
+    historyArray = historyDefaults.stringArray(forKey: "history") ?? []
     super.viewDidLoad()
+    NotificationCenter.default.addObserver(self, selector: #selector(ViewController.enterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
   }
+
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
   
+  //go to historyView
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    let destViewController: HistoryTableView = segue.destination as! HistoryTableView
+    let destViewController: HistoryViewController = segue.destination as! HistoryViewController
     destViewController.calculationsArray = historyArray
+    destViewController.delegate = self
+  }
+  
+  //app go to background
+  func enterBackground() {
+    historyDefaults.set(historyArray, forKey: "history")
+  }
+  
+  func didClearHistory(_ array: [String]) {
+    historyArray = array
   }
 }
 
