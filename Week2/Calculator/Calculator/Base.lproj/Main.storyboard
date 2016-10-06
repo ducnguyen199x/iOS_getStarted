@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jta-wt-I1x">
@@ -968,11 +968,34 @@
                                     <constraint firstItem="OO1-eq-hol" firstAttribute="width" secondItem="zIu-Vz-orV" secondAttribute="width" id="zyA-3Y-gbw"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5g-fb-gpC">
+                                <color key="backgroundColor" red="0.84258814102564106" green="0.84257755585088889" blue="0.8235045423245464" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0ep-b4-oIH"/>
+                                </constraints>
+                                <state key="normal" title="History"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.9987449707406395" green="1" blue="0.97807776492647269" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Yr7-wz-2l6" kind="popoverPresentation" popoverAnchorView="N5g-fb-gpC" id="PHD-1y-oS4">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jta-wt-I1x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="1" id="1PH-JL-nWe"/>
+                            <constraint firstItem="N5g-fb-gpC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="CsB-JK-79i"/>
+                            <constraint firstItem="N5g-fb-gpC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jkk-Vo-UOj"/>
                             <constraint firstAttribute="trailing" secondItem="jta-wt-I1x" secondAttribute="trailing" constant="1" id="TBL-nV-GEo"/>
+                            <constraint firstAttribute="trailing" secondItem="N5g-fb-gpC" secondAttribute="trailing" id="cRv-GB-NCa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jta-wt-I1x" secondAttribute="bottom" constant="1" id="mF2-k9-eah"/>
                         </constraints>
                     </view>
@@ -987,7 +1010,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165.06746626686657" y="157.59999999999999"/>
+            <point key="canvasLocation" x="163.768115942029" y="157.33695652173915"/>
+        </scene>
+        <!--History Table View-->
+        <scene sceneID="hVj-qz-eDC">
+            <objects>
+                <viewController id="Yr7-wz-2l6" customClass="HistoryTableView" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="snb-hj-y0l"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Jq-4M-kOx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dx4-MZ-QcL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2j-id-hJ1">
+                                <color key="backgroundColor" red="0.84258814100000001" green="0.84257755590000005" blue="0.82350454230000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PAd-uC-AAF"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.99874497070000001" green="1" blue="0.97807776489999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="R2j-id-hJ1" id="u99-fA-Slu">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qby-GL-VhY">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculationCell" rowHeight="70" id="4nh-Bw-bbf" customClass="CalculationCell" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4nh-Bw-bbf" id="v6I-E4-JhV">
+                                            <frame key="frameInset" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdo-MG-hcc">
+                                                    <frame key="frameInset" minX="8" minY="8" width="398" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="calculationLabel" destination="Qdo-MG-hcc" id="tAp-lo-wrX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yr7-wz-2l6" id="DWO-JB-VFs"/>
+                                    <outlet property="delegate" destination="Yr7-wz-2l6" id="D0c-h6-z6V"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qby-GL-VhY" secondAttribute="trailing" id="15q-f0-90N"/>
+                            <constraint firstAttribute="trailing" secondItem="R2j-id-hJ1" secondAttribute="trailing" id="3po-M1-zQ8"/>
+                            <constraint firstItem="R2j-id-hJ1" firstAttribute="leading" secondItem="dx4-MZ-QcL" secondAttribute="leading" id="QS2-Mh-4EK"/>
+                            <constraint firstItem="9Jq-4M-kOx" firstAttribute="top" secondItem="qby-GL-VhY" secondAttribute="bottom" id="Z58-HC-FdG"/>
+                            <constraint firstItem="R2j-id-hJ1" firstAttribute="top" secondItem="snb-hj-y0l" secondAttribute="bottom" id="bdx-62-zsE"/>
+                            <constraint firstItem="qby-GL-VhY" firstAttribute="leading" secondItem="dx4-MZ-QcL" secondAttribute="leading" id="cgD-0A-zkc"/>
+                            <constraint firstItem="qby-GL-VhY" firstAttribute="top" secondItem="R2j-id-hJ1" secondAttribute="bottom" id="he6-OW-4um"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaN-q9-Rfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931.88405797101461" y="155.70652173913044"/>
         </scene>
     </scenes>
 </document>

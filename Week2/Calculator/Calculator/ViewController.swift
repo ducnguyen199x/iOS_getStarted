@@ -14,6 +14,7 @@ class ViewController: UIViewController {
   var secondNumber: Double = 0
   var expression = "no"
   var startNew = true
+  var historyArray = [String]()
 
   @IBOutlet var resultLabel: UILabel!
   @IBOutlet var expressionLabel: UILabel!
@@ -74,6 +75,7 @@ class ViewController: UIViewController {
   @IBAction func buttonEqualClicked(_ sender: AnyObject) {
     let result = calculate()
     expressionLabel.text = ""
+    expression = "no"
     resultLabel.text = "\(result)"
   }
   
@@ -94,6 +96,11 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let destViewController: HistoryTableView = segue.destination as! HistoryTableView
+    destViewController.calculationsArray = historyArray
+  }
 }
 
 //MARK: Utility
@@ -109,7 +116,8 @@ extension ViewController {
   //Calculate
   func calculate() -> Double {
     resetAllButtons()
-    secondNumber = Double(resultLabel.text!) ?? 0
+    guard let temp = Double(resultLabel.text!) else { return firstNumber }
+    secondNumber = temp
     var result: Double = 0
     switch expression {
       case "x":
@@ -122,6 +130,9 @@ extension ViewController {
         result = firstNumber - secondNumber
       default:
         result = secondNumber
+    }
+    if expression != "no" {
+      historyArray.append("\(firstNumber) \(expression) \(secondNumber) = \(result)")
     }
     startNew = true
     expression = "no"
