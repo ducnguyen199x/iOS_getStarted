@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         validText = ""
         startNew = false
       }
-      if (resultLabel.text?.characters.count)! < 15 {
+      if validText.characters.count < 15 {
         resultLabel.text = validText + senderText
       }
     }

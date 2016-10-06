@@ -55,7 +55,18 @@ func quickSort(_ array: [Int]) -> [Int] {
 let arrayQuickSort = [16, 15, 55, 21, 88, 81, 53, 22, 27, 66, 61, 106, 55]
 quickSort(arrayQuickSort)
 
-
+//Counting Sort
+func countingSort(_ array: [Int]) -> [Int] {
+  guard  array.count > 1 else { return }
+  var a = array
+  let length = array.count
+  var countingArray = [Int](repeating: 0, count: array.count)
+  
+  for i in 0..<array.count {
+    for j in i + 1..array.count
+  }
+  return a
+}
 
 
 
