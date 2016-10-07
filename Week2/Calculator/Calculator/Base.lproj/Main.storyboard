@@ -15,17 +15,37 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5g-fb-gpC">
+                                <color key="backgroundColor" red="0.84313725490196079" green="0.79607843137254897" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0ep-b4-oIH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="History"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.9987449707406395" green="1" blue="0.97807776492647269" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Yr7-wz-2l6" kind="show" id="PHD-1y-oS4"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jta-wt-I1x">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-F4-Bqz">
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="XfR-PN-aLo">
-                                                <variation key="heightClass=compact-widthClass=compact" constant="40"/>
-                                                <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                                                <variation key="heightClass=compact-widthClass=compact" constant="35"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="40"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                                             </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
@@ -39,6 +59,9 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                            <mask key="constraints">
+                                                <include reference="XfR-PN-aLo"/>
+                                            </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
@@ -51,9 +74,9 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="Rpk-Yj-tKf">
-                                                <variation key="heightClass=compact-widthClass=compact" constant="70"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="80"/>
-                                                <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                                <variation key="heightClass=compact-widthClass=compact" constant="65"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="70"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="140"/>
                                             </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="100"/>
@@ -88,7 +111,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="g9q-5R-e6U">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -131,7 +154,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="HJn-ob-OSx">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -174,7 +197,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="RFV-y4-76M">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -217,7 +240,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="Cmz-pg-1FI">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -260,7 +283,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="Ljp-V0-aK4">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -303,7 +326,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="pqz-jW-DPT">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -346,7 +369,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="FQD-sH-w1c">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -389,7 +412,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="6XE-C0-lQU">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -432,7 +455,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="Fdl-UO-VAk">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -475,7 +498,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="QJc-OY-758">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -518,7 +541,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="eA5-0r-szz">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -561,7 +584,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="GPr-d5-dvh">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -604,7 +627,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="FVm-z2-bV3">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -647,7 +670,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="C0G-BQ-ZQO">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -690,7 +713,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="TPZ-Qm-i0c">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -733,7 +756,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="FrY-bV-oHw">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -776,7 +799,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="zFb-yI-5ys">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -819,7 +842,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="ivk-mC-oBX">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -861,7 +884,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="Qdy-KM-usp">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="45"/>
-                                                <variation key="heightClass=compact-widthClass=regular" constant="53"/>
+                                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -922,7 +945,6 @@
                                     <constraint firstItem="bWN-uD-B0s" firstAttribute="top" secondItem="WM4-2J-Tjb" secondAttribute="bottom" id="NDj-2Q-Nnz"/>
                                     <constraint firstItem="zWC-F4-Bqz" firstAttribute="leading" secondItem="jta-wt-I1x" secondAttribute="leading" id="NaK-x2-Eki"/>
                                     <constraint firstItem="bWN-uD-B0s" firstAttribute="leading" secondItem="jta-wt-I1x" secondAttribute="leading" id="Nkv-OB-MvO"/>
-                                    <constraint firstItem="zWC-F4-Bqz" firstAttribute="top" secondItem="jta-wt-I1x" secondAttribute="top" id="PKW-UU-Rna"/>
                                     <constraint firstItem="zIu-Vz-orV" firstAttribute="leading" secondItem="3xw-7G-esz" secondAttribute="trailing" id="PSZ-la-WbS"/>
                                     <constraint firstItem="TOr-bf-ykx" firstAttribute="width" secondItem="OO1-eq-hol" secondAttribute="width" id="QJY-qp-ljM"/>
                                     <constraint firstItem="p4e-iB-uVv" firstAttribute="leading" secondItem="e6M-WC-HS4" secondAttribute="trailing" id="Qts-wA-BfK"/>
@@ -968,32 +990,14 @@
                                     <constraint firstItem="OO1-eq-hol" firstAttribute="width" secondItem="zIu-Vz-orV" secondAttribute="width" id="zyA-3Y-gbw"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5g-fb-gpC">
-                                <color key="backgroundColor" red="0.84313725490196079" green="0.79607843137254897" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="0ep-b4-oIH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="History"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.9987449707406395" green="1" blue="0.97807776492647269" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="Yr7-wz-2l6" kind="show" id="PHD-1y-oS4"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.98319526010000002" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jta-wt-I1x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="1" id="1PH-JL-nWe"/>
                             <constraint firstItem="N5g-fb-gpC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="CsB-JK-79i"/>
                             <constraint firstItem="N5g-fb-gpC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jkk-Vo-UOj"/>
                             <constraint firstAttribute="trailing" secondItem="jta-wt-I1x" secondAttribute="trailing" constant="1" id="TBL-nV-GEo"/>
+                            <constraint firstItem="jta-wt-I1x" firstAttribute="top" secondItem="N5g-fb-gpC" secondAttribute="bottom" id="bLX-GX-c3Z"/>
                             <constraint firstAttribute="trailing" secondItem="N5g-fb-gpC" secondAttribute="trailing" id="cRv-GB-NCa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jta-wt-I1x" secondAttribute="bottom" constant="1" id="mF2-k9-eah"/>
                         </constraints>
@@ -1020,7 +1024,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9Jq-4M-kOx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dx4-MZ-QcL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2j-id-hJ1">
@@ -1047,10 +1051,10 @@
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculationCell" rowHeight="70" id="4nh-Bw-bbf" customClass="CalculationCell" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="736" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4nh-Bw-bbf" id="v6I-E4-JhV">
-                                            <frame key="frameInset" width="414" height="69.666666666666671"/>
+                                            <frame key="frameInset" width="736" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Qdo-MG-hcc">
@@ -1098,7 +1102,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.98319526010000002" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="qby-GL-VhY" secondAttribute="trailing" id="15q-f0-90N"/>
                             <constraint firstAttribute="trailing" secondItem="R2j-id-hJ1" secondAttribute="trailing" id="3po-M1-zQ8"/>

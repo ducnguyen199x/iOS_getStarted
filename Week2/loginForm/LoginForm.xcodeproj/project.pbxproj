@@ -77,9 +77,9 @@
 		F84434FF1DA20D8800016F41 = {
 			isa = PBXGroup;
 			children = (
-				F844350A1DA20D8800016F41 /* loginForm */,
-				F844351F1DA20D8800016F41 /* loginFormTests */,
-				F844352A1DA20D8900016F41 /* loginFormUITests */,
+				F844350A1DA20D8800016F41 /* LoginForm */,
+				F844351F1DA20D8800016F41 /* LoginFormTests */,
+				F844352A1DA20D8900016F41 /* LoginFormUITests */,
 				F84435091DA20D8800016F41 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +94,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F844350A1DA20D8800016F41 /* loginForm */ = {
+		F844350A1DA20D8800016F41 /* LoginForm */ = {
 			isa = PBXGroup;
 			children = (
 				F844350B1DA20D8800016F41 /* AppDelegate.swift */,
@@ -104,24 +104,27 @@
 				F84435141DA20D8800016F41 /* LaunchScreen.storyboard */,
 				F84435171DA20D8800016F41 /* Info.plist */,
 			);
+			name = LoginForm;
 			path = loginForm;
 			sourceTree = "<group>";
 		};
-		F844351F1DA20D8800016F41 /* loginFormTests */ = {
+		F844351F1DA20D8800016F41 /* LoginFormTests */ = {
 			isa = PBXGroup;
 			children = (
 				F84435201DA20D8800016F41 /* loginFormTests.swift */,
 				F84435221DA20D8800016F41 /* Info.plist */,
 			);
+			name = LoginFormTests;
 			path = loginFormTests;
 			sourceTree = "<group>";
 		};
-		F844352A1DA20D8900016F41 /* loginFormUITests */ = {
+		F844352A1DA20D8900016F41 /* LoginFormUITests */ = {
 			isa = PBXGroup;
 			children = (
 				F844352B1DA20D8900016F41 /* loginFormUITests.swift */,
 				F844352D1DA20D8900016F41 /* Info.plist */,
 			);
+			name = LoginFormUITests;
 			path = loginFormUITests;
 			sourceTree = "<group>";
 		};
@@ -207,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F84435031DA20D8800016F41 /* Build configuration list for PBXProject "loginForm" */;
+			buildConfigurationList = F84435031DA20D8800016F41 /* Build configuration list for PBXProject "LoginForm" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -414,7 +417,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = loginForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NguyenThanhDuc.loginForm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NguyenThanhDuc.LoginForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -426,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = loginForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NguyenThanhDuc.loginForm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NguyenThanhDuc.LoginForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -442,7 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.NguyenThanhDuc.loginFormTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/loginForm.app/loginForm";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginForm.temp_caseinsensitive_rename.app/LoginForm.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -456,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.NguyenThanhDuc.loginFormTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/loginForm.app/loginForm";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginForm.temp_caseinsensitive_rename.app/LoginForm.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -489,7 +492,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F84435031DA20D8800016F41 /* Build configuration list for PBXProject "loginForm" */ = {
+		F84435031DA20D8800016F41 /* Build configuration list for PBXProject "LoginForm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F844352E1DA20D8900016F41 /* Debug */,
@@ -505,6 +508,7 @@
 				F84435321DA20D8900016F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F84435331DA20D8900016F41 /* Build configuration list for PBXNativeTarget "loginFormTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +517,7 @@
 				F84435351DA20D8900016F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F84435361DA20D8900016F41 /* Build configuration list for PBXNativeTarget "loginFormUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +526,7 @@
 				F84435381DA20D8900016F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

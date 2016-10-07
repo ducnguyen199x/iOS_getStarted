@@ -17,7 +17,7 @@
                BlueprintIdentifier = "F84435071DA20D8800016F41"
                BuildableName = "loginForm.app"
                BlueprintName = "loginForm"
-               ReferencedContainer = "container:loginForm.xcodeproj">
+               ReferencedContainer = "container:LoginForm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "F844351B1DA20D8800016F41"
                BuildableName = "loginFormTests.xctest"
                BlueprintName = "loginFormTests"
-               ReferencedContainer = "container:loginForm.xcodeproj">
+               ReferencedContainer = "container:LoginForm.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "F84435261DA20D8800016F41"
                BuildableName = "loginFormUITests.xctest"
                BlueprintName = "loginFormUITests"
-               ReferencedContainer = "container:loginForm.xcodeproj">
+               ReferencedContainer = "container:LoginForm.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "F84435071DA20D8800016F41"
             BuildableName = "loginForm.app"
             BlueprintName = "loginForm"
-            ReferencedContainer = "container:loginForm.xcodeproj">
+            ReferencedContainer = "container:LoginForm.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "F84435071DA20D8800016F41"
             BuildableName = "loginForm.app"
             BlueprintName = "loginForm"
-            ReferencedContainer = "container:loginForm.xcodeproj">
+            ReferencedContainer = "container:LoginForm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "F84435071DA20D8800016F41"
             BuildableName = "loginForm.app"
             BlueprintName = "loginForm"
-            ReferencedContainer = "container:loginForm.xcodeproj">
+            ReferencedContainer = "container:LoginForm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

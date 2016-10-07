@@ -61,6 +61,7 @@ func countingSort(_ array: [Int]) -> [Int] {
   var a = array
   let length = array.count
   var countingArray = [Int](repeating: 0, count: length)
+  var result = [Int](repeating:0, count: length)
   
   for i in 0..<length {
     for j in i + 1..<length {
@@ -72,10 +73,14 @@ func countingSort(_ array: [Int]) -> [Int] {
     }
   }
   
-  
-  return a
+  for k in 0..<length {
+    result[countingArray[k]] = a[k]
+  }
+  return result
 }
 
+let arrayCountingSort = [16, 15, 55, 21, 88, 81, 53, 22, 27, 66, 61, 106, 55]
+countingSort(arrayCountingSort)
 
 
 
