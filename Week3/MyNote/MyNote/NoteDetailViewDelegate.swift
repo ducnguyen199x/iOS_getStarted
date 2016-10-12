@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NoteDetailViewDelegate {
-  func saveNote (index: Int, details: (String, String, String))
+  func saveNote (index: Int, details: Note)
+  func createNewNote (details: Note)
 }

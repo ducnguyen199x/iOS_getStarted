@@ -17,7 +17,7 @@ class NoteDetailViewController: UIViewController {
   var delegate: NoteDetailViewDelegate?
   
   @IBOutlet var titleTextField: UITextField!
-  @IBOutlet var contentTextView: TextViewBorder!
+  @IBOutlet var contentTextView: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,13 +26,16 @@ class NoteDetailViewController: UIViewController {
     
   }
   
-  @IBAction func doneButton(_ sender: AnyObject) {
-    dismiss(animated: true, completion: nil)
-    if let delegate = delegate,
-    let index = index,
-    let title = titleTextField.text,
-      let content = contentTextView.text {
-      delegate.saveNote(index: index, details: (title, content, "11/10/2016"))
+  @IBAction func saveButton(_ sender: AnyObject) {
+    guard let delegate = delegate,
+      let title = titleTextField.text
+      else { return }
+    
+    if let index = index,
+      let content = contentTextView.text{
+      delegate.saveNote(index: index, details: Note(title: title, content: content, dateModified: "11/10/2016"))
+    } else {
+      delegate.createNewNote(details: Note(title: title, content: content, dateModified: "11/10/2016"))
     }
   }
 }

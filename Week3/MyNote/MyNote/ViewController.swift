@@ -9,13 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NoteDetailViewDelegate {
-  var notesList: [(String, String, String)] = [("Assignment 1", "TableView TableView TableView TableView", "10/10/2016")]
-  
+  var notesList: [Note] = []
+  var indexDelete: IndexPath?
+  var dataURL: String = ""
+
   @IBOutlet var myTableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    dataURL = getDocumentsDirectory().appendingPathComponent("NotesData").absoluteString
+    getFileFromUserDefaults()
     let titleImage = UIImage(named: "2359Media_logo_FA")
     let titleImageView = UIImageView(frame: CGRect(x: 20, y: 0, width: 60, height: 35))
     let tempImageView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 35))
@@ -23,6 +26,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     titleImageView.contentMode = .scaleAspectFit
     titleImageView.image = titleImage
     navigationItem.titleView = tempImageView
+    
+    //Save data when App enters background
+    NotificationCenter.default.addObserver(self, selector: #selector (ViewController.saveFileToUserDefaults), name: Notification.Name.UIApplicationWillTerminate, object: nil)
   }
   
   override func didReceiveMemoryWarning() {
@@ -37,26 +43,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NotesCell
     
-    cell.titleLabel.text = notesList[indexPath.row].0
-    cell.dateLabel.text = notesList[indexPath.row].2
+    cell.titleLabel.text = notesList[indexPath.row].title
+    cell.dateLabel.text = notesList[indexPath.row].dateModified
     
     return cell
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == UITableViewCellEditingStyle.delete {
-      notesList.remove(at: indexPath.row)
-      tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+      indexDelete = indexPath
+      showDeleteAlert()
     }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showDetails" ,
-      let selectedIndex = myTableView.indexPathForSelectedRow?.row,
-      let destinationViewController: NoteDetailViewController = segue.destination as? NoteDetailViewController{
-      destinationViewController.titleString = notesList[selectedIndex].0
-      destinationViewController.content = notesList[selectedIndex].1
-      destinationViewController.index = selectedIndex
+      let destinationViewController: NoteDetailViewController = segue.destination as? NoteDetailViewController {
+      if let selectedIndex = myTableView.indexPathForSelectedRow?.row {
+        destinationViewController.titleString = notesList[selectedIndex].title
+        destinationViewController.content = notesList[selectedIndex].content
+        destinationViewController.index = selectedIndex
+      }
       destinationViewController.delegate = self
     }
   }
@@ -68,10 +75,87 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    let detalViewController = storyboard.instantiateViewController(withIdentifier: String(describing: NoteDetailViewController.self))
 //    self.navigationController?.pushViewController(detalViewController, animated: true)
   }
+  
+  //MARK: Save File to System
+  func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    let documentsDirectory = paths[0]
+    return documentsDirectory
+  }
+  func saveFileToUserDefaults() {
+    let data = NSKeyedArchiver.archivedData(withRootObject: notesList)
+    UserDefaults.standard.set(data, forKey: "notesList")
+  }
+  
+  func getFileFromUserDefaults() {
+    if let data = UserDefaults.standard.object(forKey: "notesList") as? Data {
+      notesList = NSKeyedUnarchiver.unarchiveObject(with: data) as! [Note]
+    }
+  }
+  
+}
 
-  func saveNote(index: Int, details: (String, String, String)) {
+//MARK: Utility
+extension ViewController {
+  func deleteNote (index: IndexPath) {
+    notesList.remove(at: index.row)
+    myTableView.deleteRows(at: [index], with: UITableViewRowAnimation.automatic)
+  }
+  
+  func showDeleteAlert() {
+    let alertDeleteController = UIAlertController.init(title: "Delete Note", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.actionSheet)
+    
+    alertDeleteController.addAction(UIAlertAction.init(title: "Delete", style: UIAlertActionStyle.destructive, handler: { (action) in
+      if let indexDelete = self.indexDelete {
+        self.deleteNote(index: indexDelete)
+      }
+    }))
+    alertDeleteController.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.cancel))
+    present(alertDeleteController, animated: true, completion: nil)
+  }
+  
+  func showSaveAlert() {
+    let alertSaveController = UIAlertController.init(title: "Missing Title", message: "Your note does not have title", preferredStyle: UIAlertControllerStyle.alert)
+    alertSaveController.addAction(UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default))
+    present(alertSaveController, animated: true, completion: nil)
+  }
+  
+  //Save note
+  func saveNote(index: Int, details: Note) {
+    guard details.title != "" else {
+      showSaveAlert()
+      return
+    }
+    details.dateModified = getCurrentTime()
     notesList[index] = details
     myTableView.reloadData()
+    _ = navigationController?.popToRootViewController(animated: true)
+    
+  }
+  
+  //New note
+  func createNewNote(details: Note) {
+    guard details.title != "" else {
+      showSaveAlert()
+      return
+    }
+    details.dateModified = getCurrentTime()
+    notesList.append(details)
+    myTableView.reloadData()
+    _ = navigationController?.popToRootViewController(animated: true)
+  }
+  
+  func getCurrentTime() -> String {
+    let date = Date()
+    let calendar = Calendar.current
+    let hour = calendar.component(.hour, from: date)
+    let minutes = calendar.component(.minute, from: date)
+    let seconds = calendar.component(.second, from: date)
+    let day = calendar.component(.day, from: date)
+    let month = calendar.component(.month, from: date)
+    let year = calendar.component(.year, from: date)
+    
+    return "\(year)-\(month)-\(day) \(hour):\(minutes):\(seconds)"
   }
 }
 

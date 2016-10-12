@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F80620371DAC8CE7004FC323 /* NoteDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80620361DAC8CE7004FC323 /* NoteDetailViewDelegate.swift */; };
+		F80620391DACC7E1004FC323 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80620381DACC7E1004FC323 /* Note.swift */; };
 		F84960FB1DAB745700FA5112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84960FA1DAB745700FA5112 /* AppDelegate.swift */; };
 		F84960FD1DAB745700FA5112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84960FC1DAB745700FA5112 /* ViewController.swift */; };
 		F84961001DAB745700FA5112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84960FE1DAB745700FA5112 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		F80620361DAC8CE7004FC323 /* NoteDetailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewDelegate.swift; sourceTree = "<group>"; };
+		F80620381DACC7E1004FC323 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		F84960F71DAB745700FA5112 /* MyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84960FA1DAB745700FA5112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F84960FC1DAB745700FA5112 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				F84960FA1DAB745700FA5112 /* AppDelegate.swift */,
 				F84960FC1DAB745700FA5112 /* ViewController.swift */,
+				F80620381DACC7E1004FC323 /* Note.swift */,
 				F84960FE1DAB745700FA5112 /* Main.storyboard */,
 				F84961011DAB745700FA5112 /* Assets.xcassets */,
 				F84961031DAB745700FA5112 /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 			files = (
 				F84961291DAB763700FA5112 /* NotesCell.swift in Sources */,
 				F8FCF56D1DAB953400E051AA /* TextViewBorder.swift in Sources */,
+				F80620391DACC7E1004FC323 /* Note.swift in Sources */,
 				F8FCF56F1DAB9AC500E051AA /* NoteDetailViewController.swift in Sources */,
 				F84960FD1DAB745700FA5112 /* ViewController.swift in Sources */,
 				F80620371DAC8CE7004FC323 /* NoteDetailViewDelegate.swift in Sources */,
