@@ -103,7 +103,7 @@ extension ViewController {
   }
   
   func showDeleteAlert() {
-    let alertDeleteController = UIAlertController.init(title: "Delete Note", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.actionSheet)
+    let alertDeleteController = UIAlertController.init(title: "Delete Note", message: "Your note will be deleted permenantly. Are you sure?", preferredStyle: UIAlertControllerStyle.actionSheet)
     
     alertDeleteController.addAction(UIAlertAction.init(title: "Delete", style: UIAlertActionStyle.destructive, handler: { (action) in
       if let indexDelete = self.indexDelete {
@@ -145,6 +145,7 @@ extension ViewController {
     _ = navigationController?.popToRootViewController(animated: true)
   }
   
+  //Current Time
   func getCurrentTime() -> String {
     let date = Date()
     let calendar = Calendar.current
