@@ -24,24 +24,18 @@ enum ThemeColor {
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  var remindersArray: [Reminder] = [Reminder.init(title: "Reminder\nReminder\nReminder", willRemind: false, alarm: nil, isRepeated: nil, note: nil),
-                                    Reminder.init(title: "AAA", willRemind: false, alarm: nil, isRepeated: nil, note: nil)]
+  var remindersArray: [Reminder] = [Reminder.init(title: "Reminder\nReminder\nReminder"),
+                                    Reminder.init(title: "AAA")]
   var themeColor = ThemeColor.blue
   var selectedRowIndex: Int?
   var isShowCompleted = false
-  let myStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-  var detailsViewSegue: UIStoryboardSegue? = nil
-  var detailsViewController: UIViewController? = nil
+  var selectedIndex = 0
   
   @IBOutlet var myTableView: UITableView!
   @IBOutlet var numberOfRemindersLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    detailsViewController = myStoryboard.instantiateViewController(withIdentifier: "DetailsViewController")
-    if let detailsViewController = detailsViewController {
-      detailsViewSegue = UIStoryboardSegue.init(identifier: "showDetailsView", source: self, destination: detailsViewController)
-    }
     myTableView.allowsSelection = false
     myTableView.estimatedRowHeight = 40
     myTableView.rowHeight = UITableViewAutomaticDimension
@@ -65,7 +59,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    print("Here")
+    let destinationViewController = segue.destination as! DetailsViewController
+    destinationViewController.titleLabel.text = remindersArray[selectedIndex].title
+    //destinationViewController.datePicker.date
+    destinationViewController.remindByDaySwitch.isOn = remindersArray[selectedIndex].willRemindByDate
+    destinationViewController.remindAtLocationSwitch.isOn = remindersArray[selectedIndex].willRemindAtLocation
+    //destinationViewController.prioritySegment.val
+    destinationViewController.noteTextView.text = remindersArray[selectedIndex].note
   }
 
   //MARK: Table View
@@ -86,11 +86,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     cell.titleTextView.tag = indexPath.row
     
     return cell
-    
   }
   
   func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-    navigationController?.performSegue(withIdentifier: "showDetailsView", sender: self)
+    self.navigationController?.performSegue(withIdentifier: "showDetailsView", sender: self)
+    selectedIndex = indexPath.row
   }
  
   

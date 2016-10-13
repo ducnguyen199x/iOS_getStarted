@@ -14,8 +14,13 @@ class DetailsViewController: UITableViewController {
   var isRemindOnDay = true
   var isRemindAtLocation = true
   
+  @IBOutlet var titleLabel: UITextView!
   @IBOutlet var datePicker: UIDatePicker!
   @IBOutlet var dateDetailsLabel: UILabel!
+  @IBOutlet var remindByDaySwitch: UISwitch!
+  @IBOutlet var remindAtLocationSwitch: UISwitch!
+  @IBOutlet var prioritySegment: UISegmentedControl!
+  @IBOutlet var noteTextView: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()

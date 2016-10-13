@@ -14,20 +14,22 @@ enum Priority {
 
 class Reminder {
   var title: String
-  var willRemind: Bool
-  var alarm: String?
+  var willRemindByDate: Bool
+  var willRemindAtLocation: Bool
+  var repeatedTime: Int
   var isRepeated: Bool?
   var note: String?
   var isCompleted: Bool
   var remindDay: Date?
   var priority: Priority
   
-  init(title: String, willRemind: Bool, alarm: String?, isRepeated: Bool?, note: String?) {
+  init(title: String) {
     self.title = title
-    self.willRemind = willRemind
-    self.alarm = alarm
-    self.isRepeated = isRepeated
-    self.note = note
+    self.willRemindByDate = false
+    self.willRemindAtLocation = false
+    self.repeatedTime = 0
+    self.isRepeated = false
+    self.note = ""
     self.isCompleted = false
     self.priority = .none
   }
