@@ -8,30 +8,24 @@
 
 import Foundation
 
-enum Priority {
-  case none, one, two, three
-}
-
 class Reminder {
   var title: String
-  var willRemindByDate: Bool
+  var willRemindByDay: Bool
   var willRemindAtLocation: Bool
   var repeatedTime: Int
-  var isRepeated: Bool?
   var note: String?
   var isCompleted: Bool
   var remindDay: Date?
-  var priority: Priority
+  var priority: Int
   
   init(title: String) {
     self.title = title
-    self.willRemindByDate = false
+    self.willRemindByDay = false
     self.willRemindAtLocation = false
     self.repeatedTime = 0
-    self.isRepeated = false
     self.note = ""
     self.isCompleted = false
-    self.priority = .none
+    self.priority = 0
+    self.remindDay = Date()
   }
-  
 }

@@ -42,7 +42,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     remindersArray[1].isCompleted = false
     updateNumberOfReminders()
     
-  
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -60,12 +59,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let destinationViewController = segue.destination as! DetailsViewController
-    destinationViewController.titleLabel.text = remindersArray[selectedIndex].title
-    //destinationViewController.datePicker.date
-    destinationViewController.remindByDaySwitch.isOn = remindersArray[selectedIndex].willRemindByDate
-    destinationViewController.remindAtLocationSwitch.isOn = remindersArray[selectedIndex].willRemindAtLocation
-    //destinationViewController.prioritySegment.val
-    destinationViewController.noteTextView.text = remindersArray[selectedIndex].note
+    destinationViewController.selectedIndex = selectedIndex
+    destinationViewController.titleString = remindersArray[selectedIndex].title
+    destinationViewController.date = remindersArray[selectedIndex].remindDay
+    destinationViewController.isRemindOnDay = remindersArray[selectedIndex].willRemindByDay
+    destinationViewController.isRemindAtLocation = remindersArray[selectedIndex].willRemindAtLocation
+    destinationViewController.priority = remindersArray[selectedIndex].priority
+    destinationViewController.note = remindersArray[selectedIndex].note
+    destinationViewController.delegate = self
   }
 
   //MARK: Table View
@@ -89,7 +90,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-    self.navigationController?.performSegue(withIdentifier: "showDetailsView", sender: self)
+    self.performSegue(withIdentifier: "showDetailsView", sender: self)
     selectedIndex = indexPath.row
   }
  
@@ -131,6 +132,21 @@ extension MainViewController: UITextViewDelegate {
   func textViewDidEndEditing(_ textView: UITextView) {
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
     cell?.accessoryType = .none
+  }
+}
+
+//MARK: DetailsViewDelegate
+extension MainViewController: DetailsViewDelegate {
+  func saveDetails(index: Int, title: String, willRemindByDay: Bool, willRemindAtLocation: Bool,
+                   repeatedTime: Int, note: String?,remindDay: Date?, priority: Int) {
+    remindersArray[index].title = title
+    remindersArray[index].willRemindByDay = willRemindByDay
+    remindersArray[index].willRemindAtLocation = willRemindAtLocation
+    remindersArray[index].repeatedTime = repeatedTime
+    remindersArray[index].note = note
+    remindersArray[index].remindDay = remindDay
+    remindersArray[index].priority = priority
+    myTableView.reloadData()
   }
 }
 

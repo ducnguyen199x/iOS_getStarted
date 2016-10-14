@@ -11,6 +11,7 @@
 		F82FDCC51DAF8E1800809D5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82FDCC41DAF8E1800809D5F /* Main.storyboard */; };
 		F8CA41D41DAE202B008DDE6A /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA41D31DAE202B008DDE6A /* ButtonBorder.swift */; };
 		F8CA41D61DAE351B008DDE6A /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA41D51DAE351B008DDE6A /* UIButtonExtension.swift */; };
+		F8EAB3B31DB08B5400215ED4 /* DetailsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EAB3B21DB08B5400215ED4 /* DetailsViewDelegate.swift */; };
 		F8F8486A1DADE13F00EA321C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F848691DADE13F00EA321C /* AppDelegate.swift */; };
 		F8F8486C1DADE13F00EA321C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F8486B1DADE13F00EA321C /* MainViewController.swift */; };
 		F8F848711DADE13F00EA321C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F848701DADE13F00EA321C /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		F82FDCC41DAF8E1800809D5F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F8CA41D31DAE202B008DDE6A /* ButtonBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
 		F8CA41D51DAE351B008DDE6A /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		F8EAB3B21DB08B5400215ED4 /* DetailsViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewDelegate.swift; sourceTree = "<group>"; };
 		F8F848661DADE13F00EA321C /* MyReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F848691DADE13F00EA321C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8F8486B1DADE13F00EA321C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				F8F848701DADE13F00EA321C /* Assets.xcassets */,
 				F8F848721DADE13F00EA321C /* LaunchScreen.storyboard */,
 				F8F848751DADE13F00EA321C /* Info.plist */,
+				F8EAB3B21DB08B5400215ED4 /* DetailsViewDelegate.swift */,
 			);
 			path = MyReminder;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8EAB3B31DB08B5400215ED4 /* DetailsViewDelegate.swift in Sources */,
 				F8F848981DADF23500EA321C /* Reminder.swift in Sources */,
 				F8F8486C1DADE13F00EA321C /* MainViewController.swift in Sources */,
 				F8F8486A1DADE13F00EA321C /* AppDelegate.swift in Sources */,
