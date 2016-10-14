@@ -33,6 +33,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   @IBOutlet var myTableView: UITableView!
   @IBOutlet var numberOfRemindersLabel: UILabel!
+  @IBOutlet var editButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -57,6 +58,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
    
   }
   
+  //Send data to next View
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let destinationViewController = segue.destination as! DetailsViewController
     destinationViewController.selectedIndex = selectedIndex
@@ -71,32 +73,44 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
   //MARK: Table View
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return remindersArray.count
+    return remindersArray.count + 1
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderCell
-    
-    cell.titleTextView.text = remindersArray[indexPath.row].title
     cell.titleTextView.delegate = self
-    cell.completedButton.isSelected = remindersArray[indexPath.row].isCompleted
-    cell.completedButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-    cell.completedButton.layer.cornerRadius = 10
-    cell.completedButton.clipsToBounds = true
-    cell.completedButton.setBackgroundColor(color: themeColor.color(), forState: .selected)
     cell.titleTextView.tag = indexPath.row
     
+    if indexPath.row < remindersArray.count {
+      cell.completedButton.setTitle(nil, for: .normal)
+      cell.completedButton.isEnabled = true
+      cell.completedButton.borderWidth = 0.5
+      cell.titleTextView.text = remindersArray[indexPath.row].title
+      cell.completedButton.isSelected = remindersArray[indexPath.row].isCompleted
+      cell.completedButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+      cell.completedButton.layer.cornerRadius = 10
+      cell.completedButton.clipsToBounds = true
+      cell.completedButton.setBackgroundColor(color: themeColor.color(), forState: .selected)
+    }
     return cell
   }
   
   func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-    self.performSegue(withIdentifier: "showDetailsView", sender: self)
+    let cell = tableView.cellForRow(at: indexPath) as! ReminderCell
+    if indexPath.row > remindersArray.count - 1 {
+      createReminder(title: cell.titleTextView.text)
+    } else if cell.titleTextView.text != "" {
+      remindersArray[indexPath.row].title = cell.titleTextView.text
+    }
     selectedIndex = indexPath.row
+    self.performSegue(withIdentifier: "showDetailsView", sender: self)
+    
   }
  
   
   //MARK: Button Action
   @IBAction func editButtonPressed(_ sender: UIButton) {
+    
     sender.isSelected = !sender.isSelected
   }
   
@@ -114,24 +128,45 @@ extension MainViewController {
   func updateNumberOfReminders() {
     numberOfRemindersLabel.text = remindersArray.count.description
   }
+  
+  func createReminder(title: String) {
+    let newReminder = Reminder.init(title: title)
+    remindersArray.append(newReminder)
+  }
 }
 
 //MARK: UITextViewDelegate
 extension MainViewController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
+    let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
+    if textView.tag > remindersArray.count - 1 {
+      if textView.text != "" {
+        cell?.accessoryType = .detailButton
+      } else {
+        cell?.accessoryType = .none
+      }
+    }
     myTableView.beginUpdates()
     myTableView.endUpdates()
   }
   
-  func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+  func textViewDidBeginEditing(_ textView: UITextView) {
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
-    cell?.accessoryType = .detailButton
-    return true
+    if textView.tag <= remindersArray.count - 1 {
+      cell?.accessoryType = .detailButton
+    }
+    editButton.isSelected = true
   }
   
   func textViewDidEndEditing(_ textView: UITextView) {
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
     cell?.accessoryType = .none
+    if textView.tag > remindersArray.count - 1 {
+      createReminder(title: textView.text)
+    } else if textView.text != "" {
+      remindersArray[textView.tag].title = textView.text
+    }
+    myTableView.reloadData()
   }
 }
 
