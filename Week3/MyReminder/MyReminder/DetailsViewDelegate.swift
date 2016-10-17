@@ -9,7 +9,5 @@
 import Foundation
 
 protocol DetailsViewDelegate {
-  func saveDetails(index: Int, title: String, willRemindByDay: Bool, willRemindAtLocation: Bool,
-                   repeatedTime: Int, note: String?,
-                   remindDay: Date?, priority: Int)
+  func saveDetails(index: Int)
 }

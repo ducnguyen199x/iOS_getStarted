@@ -28,4 +28,15 @@ class Reminder {
     self.priority = 0
     self.remindDay = Date()
   }
+  
+  func save(title: String, willRemindByDay: Bool, willRemindAtLocation: Bool, repeatedTime: Int,
+            note: String?, remindDay: Date?, priority: Int) {
+    self.title = title
+    self.willRemindByDay = willRemindByDay
+    self.willRemindAtLocation = willRemindAtLocation
+    self.repeatedTime = repeatedTime
+    self.note = note
+    self.remindDay = remindDay
+    self.priority = priority
+  }
 }

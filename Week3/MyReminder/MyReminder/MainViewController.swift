@@ -24,8 +24,7 @@ enum ThemeColor {
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  var remindersArray: [Reminder] = [Reminder.init(title: "Reminder\nReminder\nReminder"),
-                                    Reminder.init(title: "AAA")]
+  var remindersArray: [Reminder] = [Reminder(title: "Reminder")]
   var themeColor = ThemeColor.blue
   var selectedRowIndex: Int?
   var isShowCompleted = false
@@ -40,7 +39,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     myTableView.allowsSelection = false
     myTableView.estimatedRowHeight = 40
     myTableView.rowHeight = UITableViewAutomaticDimension
-    remindersArray[1].isCompleted = false
     updateNumberOfReminders()
     
   }
@@ -58,28 +56,38 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
    
   }
   
-  //Send data to next View
+  // Send data to next View
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let destinationViewController = segue.destination as! DetailsViewController
     destinationViewController.selectedIndex = selectedIndex
-    destinationViewController.titleString = remindersArray[selectedIndex].title
-    destinationViewController.date = remindersArray[selectedIndex].remindDay
-    destinationViewController.isRemindOnDay = remindersArray[selectedIndex].willRemindByDay
-    destinationViewController.isRemindAtLocation = remindersArray[selectedIndex].willRemindAtLocation
-    destinationViewController.priority = remindersArray[selectedIndex].priority
-    destinationViewController.note = remindersArray[selectedIndex].note
+//    destinationViewController.titleString = remindersArray[selectedIndex].title
+//    destinationViewController.date = remindersArray[selectedIndex].remindDay
+//    destinationViewController.isRemindOnDay = remindersArray[selectedIndex].willRemindByDay
+//    destinationViewController.isRemindAtLocation = remindersArray[selectedIndex].willRemindAtLocation
+//    destinationViewController.priority = remindersArray[selectedIndex].priority
+//    destinationViewController.note = remindersArray[selectedIndex].note
     destinationViewController.delegate = self
+    destinationViewController.reminder = remindersArray[selectedIndex]
   }
 
-  //MARK: Table View
+  // MARK: Table View
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return remindersArray.count + 1
+    if editButton.isSelected {
+      return remindersArray.count
+    } else {
+      return remindersArray.count + 1
+    }
+    //return remindersArray.count + 1
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderCell
     cell.titleTextView.delegate = self
     cell.titleTextView.tag = indexPath.row
+    cell.layer.borderWidth = 0
+    cell.completedButton.isEnabled = false
+    cell.completedButton.setTitle("+", for: .normal)
+    cell.titleTextView.text = ""
     
     if indexPath.row < remindersArray.count {
       cell.completedButton.setTitle(nil, for: .normal)
@@ -95,6 +103,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     return cell
   }
   
+  // Accessory tapped
   func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
     let cell = tableView.cellForRow(at: indexPath) as! ReminderCell
     if indexPath.row > remindersArray.count - 1 {
@@ -104,14 +113,32 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     selectedIndex = indexPath.row
     self.performSegue(withIdentifier: "showDetailsView", sender: self)
-    
   }
  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    tableView.beginUpdates()
+    tableView.deleteRows(at: [indexPath], with: .automatic)
+    remindersArray.remove(at: indexPath.row)
+    tableView.endUpdates()
+  }
   
-  //MARK: Button Action
+  func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  // Reorder rowjhj
+  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    let movedItem = remindersArray[sourceIndexPath.row]
+    remindersArray.remove(at: sourceIndexPath.row)
+    remindersArray.insert(movedItem, at: destinationIndexPath.row)
+  }
+  
+  // MARK: Button Action
   @IBAction func editButtonPressed(_ sender: UIButton) {
-    
     sender.isSelected = !sender.isSelected
+    myTableView.isEditing = !myTableView.isEditing
+    myTableView.reloadData()
+    //myTableView.reloadRows(at: [IndexPath(row: remindersArray.count, section: 0)], with: .automatic)
   }
   
   @IBAction func completedButtonPressed(_ sender: RadioButton) {
@@ -123,7 +150,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
 }
 
-//MARK: Utility
+// MARK: Utility
 extension MainViewController {
   func updateNumberOfReminders() {
     numberOfRemindersLabel.text = remindersArray.count.description
@@ -132,13 +159,17 @@ extension MainViewController {
   func createReminder(title: String) {
     let newReminder = Reminder.init(title: title)
     remindersArray.append(newReminder)
+    myTableView.insertRows(at: [IndexPath(row:remindersArray.count - 1, section: 0)], with: .automatic)
+    myTableView.reloadRows(at: [IndexPath(row: remindersArray.count, section: 0)], with: .automatic)
   }
 }
 
-//MARK: UITextViewDelegate
+// MARK: UITextViewDelegate
 extension MainViewController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
+    
+    // Hide/Show accessory of the last row
     if textView.tag > remindersArray.count - 1 {
       if textView.text != "" {
         cell?.accessoryType = .detailButton
@@ -152,36 +183,41 @@ extension MainViewController: UITextViewDelegate {
   
   func textViewDidBeginEditing(_ textView: UITextView) {
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
+    
+    // Show accessory when textview is focused
     if textView.tag <= remindersArray.count - 1 {
       cell?.accessoryType = .detailButton
     }
-    editButton.isSelected = true
+    //editButton.isSelected = true
   }
   
   func textViewDidEndEditing(_ textView: UITextView) {
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
     cell?.accessoryType = .none
-    if textView.tag > remindersArray.count - 1 {
-      createReminder(title: textView.text)
-    } else if textView.text != "" {
-      remindersArray[textView.tag].title = textView.text
+    
+    // Create/Save reminder when textview is end editted
+    if textView.text != "" {
+      if textView.tag > remindersArray.count - 1 {
+        createReminder(title: textView.text)
+      } else {
+        remindersArray[textView.tag].title = textView.text
+      }
     }
-    myTableView.reloadData()
+    //myTableView.reloadData()
   }
 }
 
-//MARK: DetailsViewDelegate
+// MARK: DetailsViewDelegate
 extension MainViewController: DetailsViewDelegate {
-  func saveDetails(index: Int, title: String, willRemindByDay: Bool, willRemindAtLocation: Bool,
-                   repeatedTime: Int, note: String?,remindDay: Date?, priority: Int) {
-    remindersArray[index].title = title
-    remindersArray[index].willRemindByDay = willRemindByDay
-    remindersArray[index].willRemindAtLocation = willRemindAtLocation
-    remindersArray[index].repeatedTime = repeatedTime
-    remindersArray[index].note = note
-    remindersArray[index].remindDay = remindDay
-    remindersArray[index].priority = priority
-    myTableView.reloadData()
+  func saveDetails(index: Int) {
+//    remindersArray[index].title = title
+//    remindersArray[index].willRemindByDay = willRemindByDay
+//    remindersArray[index].willRemindAtLocation = willRemindAtLocation
+//    remindersArray[index].repeatedTime = repeatedTime
+//    remindersArray[index].note = note
+//    remindersArray[index].remindDay = remindDay
+//    remindersArray[index].priority = priority
+    myTableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
   }
 }
 
