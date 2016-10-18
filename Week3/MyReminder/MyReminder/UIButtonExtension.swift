@@ -15,7 +15,7 @@ class RadioButton: UIButton {
   var normalColor: UIColor?
   func setBackgroundColor(color: UIColor, forState: UIControlState) {
     self.color = color
-    self.normalColor = self.backgroundColor
+    self.normalColor = UIColor.white
   }
   
   override var isSelected: Bool {

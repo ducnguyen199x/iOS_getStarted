@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82E81BC1DB5CC6E0011F4DB /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E81BB1DB5CC6E0011F4DB /* ColorCell.swift */; };
+		F82E81BE1DB5CCFC0011F4DB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E81BD1DB5CCFC0011F4DB /* ColorViewController.swift */; };
+		F82E81C01DB5E39D0011F4DB /* HeaderColor.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82E81BF1DB5E39D0011F4DB /* HeaderColor.xib */; };
+		F82E81C21DB5F5380011F4DB /* ColorViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E81C11DB5F5380011F4DB /* ColorViewDelegate.swift */; };
+		F82E81C41DB60D3E0011F4DB /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E81C31DB60D3E0011F4DB /* HeaderViewController.swift */; };
 		F82FDCC31DAF3F5600809D5F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82FDCC21DAF3F5600809D5F /* DetailsViewController.swift */; };
 		F82FDCC51DAF8E1800809D5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82FDCC41DAF8E1800809D5F /* Main.storyboard */; };
 		F8CA41D41DAE202B008DDE6A /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA41D31DAE202B008DDE6A /* ButtonBorder.swift */; };
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F82E81BB1DB5CC6E0011F4DB /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		F82E81BD1DB5CCFC0011F4DB /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		F82E81BF1DB5E39D0011F4DB /* HeaderColor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderColor.xib; sourceTree = "<group>"; };
+		F82E81C11DB5F5380011F4DB /* ColorViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewDelegate.swift; sourceTree = "<group>"; };
+		F82E81C31DB60D3E0011F4DB /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		F82FDCC21DAF3F5600809D5F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F82FDCC41DAF8E1800809D5F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F8CA41D31DAE202B008DDE6A /* ButtonBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
@@ -110,7 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				F82FDCC41DAF8E1800809D5F /* Main.storyboard */,
+				F82E81BD1DB5CCFC0011F4DB /* ColorViewController.swift */,
 				F8F848691DADE13F00EA321C /* AppDelegate.swift */,
+				F82E81BB1DB5CC6E0011F4DB /* ColorCell.swift */,
 				F8F8486B1DADE13F00EA321C /* MainViewController.swift */,
 				F8CA41D51DAE351B008DDE6A /* UIButtonExtension.swift */,
 				F8F848991DADF42B00EA321C /* ReminderCell.swift */,
@@ -121,6 +133,9 @@
 				F8F848721DADE13F00EA321C /* LaunchScreen.storyboard */,
 				F8F848751DADE13F00EA321C /* Info.plist */,
 				F8EAB3B21DB08B5400215ED4 /* DetailsViewDelegate.swift */,
+				F82E81BF1DB5E39D0011F4DB /* HeaderColor.xib */,
+				F82E81C11DB5F5380011F4DB /* ColorViewDelegate.swift */,
+				F82E81C31DB60D3E0011F4DB /* HeaderViewController.swift */,
 			);
 			path = MyReminder;
 			sourceTree = "<group>";
@@ -250,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82E81C01DB5E39D0011F4DB /* HeaderColor.xib in Resources */,
 				F82FDCC51DAF8E1800809D5F /* Main.storyboard in Resources */,
 				F8F848741DADE13F00EA321C /* LaunchScreen.storyboard in Resources */,
 				F8F848711DADE13F00EA321C /* Assets.xcassets in Resources */,
@@ -278,12 +294,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8EAB3B31DB08B5400215ED4 /* DetailsViewDelegate.swift in Sources */,
+				F82E81C21DB5F5380011F4DB /* ColorViewDelegate.swift in Sources */,
 				F8F848981DADF23500EA321C /* Reminder.swift in Sources */,
+				F82E81BC1DB5CC6E0011F4DB /* ColorCell.swift in Sources */,
 				F8F8486C1DADE13F00EA321C /* MainViewController.swift in Sources */,
+				F82E81C41DB60D3E0011F4DB /* HeaderViewController.swift in Sources */,
 				F8F8486A1DADE13F00EA321C /* AppDelegate.swift in Sources */,
 				F8CA41D41DAE202B008DDE6A /* ButtonBorder.swift in Sources */,
 				F82FDCC31DAF3F5600809D5F /* DetailsViewController.swift in Sources */,
 				F8F8489A1DADF42B00EA321C /* ReminderCell.swift in Sources */,
+				F82E81BE1DB5CCFC0011F4DB /* ColorViewController.swift in Sources */,
 				F8CA41D61DAE351B008DDE6A /* UIButtonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

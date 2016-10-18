@@ -14,6 +14,7 @@ class DetailsViewController: UITableViewController {
   var isDatePickerHidden = true
   var delegate: DetailsViewDelegate?
   var reminder: Reminder?
+  var backupReminder = Reminder.init(title: "backup")
   
   @IBOutlet var titleTextView: UITextView!
   @IBOutlet var datePicker: UIDatePicker!
@@ -33,9 +34,9 @@ class DetailsViewController: UITableViewController {
     if let date = reminder?.remindDay {
       datePicker.date = date
     }
+    backupReminder.save(title: titleTextView.text, willRemindByDay: remindByDaySwitch.isOn, willRemindAtLocation: remindAtLocationSwitch.isOn, repeatedTime: 0, note: noteTextView.text, remindDay: datePicker.date, priority: prioritySegment.selectedSegmentIndex)
     self.navigationItem.title = "Details"
     self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Done", style: .plain, target: self, action: #selector(saveReminder))
-    self.navigationItem.hidesBackButton = true
     updateDatePicker()
   }
   
@@ -47,9 +48,9 @@ class DetailsViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if isDatePickerHidden && indexPath.section == 1 && indexPath.row == 2 {
       return 0
-    } else if !(reminder?.willRemindByDay)! && indexPath.section == 1 && indexPath.row >= 1 {
+    } else if !remindByDaySwitch.isOn && indexPath.section == 1 && indexPath.row >= 1 {
       return 0
-    } else if !(reminder?.willRemindAtLocation)! && indexPath.section == 2 && indexPath.row >= 1 {
+    } else if !remindAtLocationSwitch.isOn && indexPath.section == 2 && indexPath.row >= 1 {
       return 0
     } else if indexPath.section == 1 && indexPath.row == 2 {
       return super.tableView(self.tableView, heightForRowAt: indexPath)
@@ -76,13 +77,13 @@ class DetailsViewController: UITableViewController {
   }
   
   @IBAction func remindByDaySwitched(_ sender: UISwitch) {
-    reminder?.willRemindByDay = sender.isOn
-    updateTableView()
+    tableView.beginUpdates()
+    tableView.endUpdates()
   }
   
   @IBAction func remindAtLocationSwitched(_ sender: UISwitch) {
-    reminder?.willRemindAtLocation = sender.isOn
-    updateTableView()
+    tableView.beginUpdates()
+    tableView.endUpdates()
   }
   
   func saveReminder() {
@@ -90,17 +91,15 @@ class DetailsViewController: UITableViewController {
     delegate?.saveDetails(index: selectedIndex)
     _ = self.navigationController?.popToRootViewController(animated: true)
   }
+  
 }
 
 //MARK: Hide and Show cell
 extension DetailsViewController {
-  func updateTableView() {
-    tableView.beginUpdates()
-    tableView.endUpdates()
-  }
   func toggleDatePicker() {
+    tableView.beginUpdates()
     isDatePickerHidden = !isDatePickerHidden
-    updateTableView()
+    tableView.endUpdates()
   }
   
   func updateDatePicker() {
