@@ -254,6 +254,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
 
   @IBAction func showButtonPressed(_ sender: UIButton) {
+    remindersArray.sort(by: {!$0.isCompleted && $1.isCompleted})
     sender.isSelected = !sender.isSelected
     isShowCompleted = sender.isSelected
     updateNumberOfReminders()
