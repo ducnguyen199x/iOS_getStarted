@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WKWebView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -32,7 +31,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0x-0p-5OP">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="VEs-8g-dEN"/>
+                                            <constraint firstAttribute="width" id="VEs-8g-dEN"/>
                                         </constraints>
                                         <state key="normal" title="Cancel"/>
                                     </button>
@@ -95,12 +94,14 @@
                     <connections>
                         <outlet property="addressTextField" destination="dmk-GT-BnT" id="E8Q-gg-nvW"/>
                         <outlet property="backButton" destination="4aa-Kc-kFb" id="lBQ-z0-xmb"/>
+                        <outlet property="canceButtonWidthConstraint" destination="VEs-8g-dEN" id="U2f-G2-ijd"/>
                         <outlet property="cancelButton" destination="t0x-0p-5OP" id="o7M-XC-WGD"/>
                         <outlet property="forwardButton" destination="NeG-Yl-4jk" id="wzQ-xe-pjb"/>
                         <outlet property="loadingIndicator" destination="VLe-nw-YKp" id="6WB-0V-cBh"/>
                         <outlet property="myView" destination="nH7-gi-etK" id="Caj-GG-FmQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="137.18140929535232"/>
         </scene>

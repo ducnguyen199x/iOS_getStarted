@@ -16,6 +16,8 @@ class ViewController: UIViewController {
   @IBOutlet var backButton: UIBarButtonItem!
   @IBOutlet var forwardButton: UIBarButtonItem!
   
+  @IBOutlet var canceButtonWidthConstraint: NSLayoutConstraint!
+  
   var webView: WKWebView?
   
   @IBOutlet var myView: UIView!
@@ -64,7 +66,7 @@ extension ViewController {
       let request = URLRequest(url: urlToLoad)
       _ = self.webView?.load(request)
     } else {
-      print("error")
+      displayErrorMessage()
     }
   }
 }
@@ -72,14 +74,21 @@ extension ViewController {
 // MARK: UITextFieldDelegate
 extension ViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
-    //cancelButton.frame.width = 0
+    UIView.animate(withDuration: 0.2, animations: {
+      self.canceButtonWidthConstraint.constant = 0
+      self.view.layoutIfNeeded()
+    })
+    
     guard let url = addressTextField.text else { return }
   
     loadURL(url: url)
   }
   
   func textFieldDidBeginEditing(_ textField: UITextField) {
-    
+    UIView.animate(withDuration: 0.2, animations: {
+      self.canceButtonWidthConstraint.constant = 48
+      self.view.layoutIfNeeded()
+    })
   }
 }
 
@@ -95,6 +104,12 @@ extension ViewController: WKNavigationDelegate {
     loadingIndicator.isHidden = true
     backButton.isEnabled = webView.canGoBack
     forwardButton.isEnabled = webView.canGoForward
+  }
+  
+  func displayErrorMessage() {
+    let alertController = UIAlertController.init(title: "Invalid URL", message: "Your URL is invalid, please check again", preferredStyle: .alert)
+    alertController.addAction(UIAlertAction.init(title: "OK", style: .default))
+    present(alertController, animated: true, completion: nil)
   }
 }
 
