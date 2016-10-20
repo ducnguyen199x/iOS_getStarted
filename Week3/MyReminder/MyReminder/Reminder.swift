@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class Reminder: NSObject, NSCoding {
   var title: String
@@ -17,6 +18,7 @@ class Reminder: NSObject, NSCoding {
   var isCompleted: Bool
   var remindDay: Date?
   var priority: Int
+  var id: UUID
   
   init(title: String) {
     self.title = title
@@ -27,6 +29,7 @@ class Reminder: NSObject, NSCoding {
     self.isCompleted = false
     self.priority = 0
     self.remindDay = Date()
+    self.id = UUID.init()
   }
   
   required convenience init(coder decoder: NSCoder) {
@@ -55,6 +58,7 @@ class Reminder: NSObject, NSCoding {
     aCoder.encode(self.priority, forKey: "priority")
   }
   
+  //save infomation
   func save(title: String, willRemindByDay: Bool, willRemindAtLocation: Bool, repeatedTime: Int,
             note: String?, remindDay: Date?, priority: Int) {
     self.title = title
@@ -64,11 +68,46 @@ class Reminder: NSObject, NSCoding {
     self.note = note
     self.remindDay = remindDay
     self.priority = priority
+    
+    cancelNotification()
+    
+    if willRemindByDay {
+      createNotification(date: remindDay, identifier: self.id.description)
+    }
   }
   
   func getPriority() -> String {
     return Array<String>(repeating: "!", count: priority).joined()
   }
   
+  // Notification
+  func createNotification(date: Date?, identifier: String) {
+    guard let date = date else { return }
+    
+    let content = UNMutableNotificationContent()
+    content.title = NSString.localizedUserNotificationString(forKey: "Task: \(self.title) is due", arguments: nil)
+    content.body = NSString.localizedUserNotificationString(forKey: "Hi, Please check your Reminder, make sure that you do not miss your tasks.", arguments: nil)
+    content.sound = UNNotificationSound.default()
+    
+    // Deliver the notification
+    var dateComponent = DateComponents()
+    let calendar = Calendar.current
+    dateComponent.day = calendar.component(.day, from: date)
+    dateComponent.month = calendar.component(.month, from: date)
+    dateComponent.year = calendar.component(.year, from: date)
+    dateComponent.hour = calendar.component(.hour, from: date)
+    dateComponent.minute = calendar.component(.minute, from: date)
+    
+    let trigger = UNCalendarNotificationTrigger.init(dateMatching: dateComponent, repeats: false)
+    let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+    
+    // Schedule the notification.
+    let center = UNUserNotificationCenter.current()
+    center.add(request)
+  }
+  
+  func cancelNotification() {
+    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.id.description])
+  }
   
 }

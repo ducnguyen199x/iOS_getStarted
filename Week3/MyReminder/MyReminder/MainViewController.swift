@@ -46,13 +46,12 @@ enum ThemeColor {
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var remindersArray: [Reminder] = []
-  //var completedRemindersArray: [Reminder] = []
   var themeColor = ThemeColor.blue
   var selectedRowIndex: Int?
   var isShowCompleted = false
   var selectedIndex = 0
-  var isTextViewFocused = false
   
+  @IBOutlet var showButton: UIButton!
   @IBOutlet var listLabel: UILabel!
   @IBOutlet var myTableView: UITableView!
   @IBOutlet var numberOfRemindersLabel: UILabel!
@@ -64,7 +63,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     setUpView()
     myTableView.register(UINib.init(nibName: "HeaderColor", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
     updateNumberOfReminders()
-    
     //when app will be terminated
     NotificationCenter.default.addObserver(self, selector: #selector(saveFileToUserDefaults), name: .UIApplicationWillTerminate, object: nil)
   }
@@ -124,13 +122,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     cell.titleTextView.delegate = self
     cell.titleTextView.tag = indexPath.row
     cell.completedButton.tag = indexPath.row
-    cell.completedButton.layer.borderWidth = 0
-    cell.completedButton.isEnabled = false
-    cell.completedButton.setTitle("+", for: .normal)
-    cell.titleTextView.text = ""
-    cell.accessoryType = .none
+    cell.toLastCellFormat()
+
     
     if indexPath.row < remindersArray.count {
+      cell.toNormalCellFormat()
+      cell.completedButton.setBackgroundColor(color: themeColor.color(), forState: .selected)
+      
       var priorityString = remindersArray[indexPath.row].getPriority()
     
       let attributedString = NSMutableAttributedString.init(string: "\(priorityString)\(remindersArray[indexPath.row].title)")
@@ -138,36 +136,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     value: themeColor.color(), range: NSRange(location: 0, length: priorityString.characters.count))
       attributedString.addAttribute(NSFontAttributeName,
                                     value: UIFont.systemFont(ofSize: 18.0), range: NSRange(location: 0, length: remindersArray[indexPath.row].title.characters.count + priorityString.characters.count))
-      cell.completedButton.setTitle(nil, for: .normal)
-      cell.completedButton.isEnabled = true
-      cell.titleTextView.isEditable = true
-      cell.completedButton.borderWidth = 1.5
+
       cell.titleTextView.attributedText = attributedString
-      //cell.titleTextView.text = remindersArray[indexPath.row].title
       cell.completedButton.isSelected = remindersArray[indexPath.row].isCompleted
-      cell.completedButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-      cell.completedButton.layer.cornerRadius = 10
-      cell.completedButton.clipsToBounds = true
-      cell.completedButton.setBackgroundColor(color: themeColor.color(), forState: .selected)
       
       if myTableView.isEditing {
         cell.completedButton.isEnabled = false
         cell.titleTextView.isEditable = false
       }
-      
-      if !isShowCompleted && remindersArray[indexPath.row].isCompleted {
-        cell.isHidden = true
-      }
     }
-    
-    cell.separatorInset = UIEdgeInsetsMake(0, indexPath.row % 2 == 0 ? 0 : 15 , 0, 0)
-    
+
     return cell
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if indexPath.row < remindersArray.count && remindersArray[indexPath.row].isCompleted && !isShowCompleted {
-      return 1
+      return 0.1
     }
     return 40
   }
@@ -198,6 +182,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
  
   // commit delete
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    remindersArray[indexPath.row].cancelNotification()
     if editButton.isSelected {
       tableView.beginUpdates()
       tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -215,7 +200,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-    guard isTextViewFocused == false else {
+    guard editButton.isSelected == false else {
       //if text view is focusing, just return
       return false
     }
@@ -241,16 +226,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
       sender.isSelected = !sender.isSelected
       return
     } else {
+      showButton.isHidden = !showButton.isHidden
       sender.isSelected = !sender.isSelected
       myTableView.isEditing = !myTableView.isEditing
       myTableView.reloadData()
-      //myTableView.reloadRows(at: [IndexPath(row: remindersArray.count, section: 0)], with: .automatic)
     }
   }
   
   @IBAction func completedButtonPressed(_ sender: RadioButton) {
     sender.isSelected = !sender.isSelected
     remindersArray[sender.tag].isCompleted = sender.isSelected
+    myTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
   }
 
   @IBAction func showButtonPressed(_ sender: UIButton) {
@@ -269,7 +255,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 // MARK: Utility
 extension MainViewController {
   func updateNumberOfReminders() {
-    numberOfRemindersLabel.text = remindersArray.count.description
+    numberOfRemindersLabel.text = isShowCompleted ? remindersArray.count.description : remindersArray.filter({ !$0.isCompleted }).count.description
   }
   
   func createReminder(title: String) {
@@ -282,6 +268,7 @@ extension MainViewController {
   }
   
   func setUpView() {
+    showButton.isSelected = isShowCompleted
     listLabel.textColor = themeColor.color()
     numberOfRemindersLabel.textColor = themeColor.color()
     myTableView.allowsSelection = false
@@ -293,12 +280,14 @@ extension MainViewController {
   func saveFileToUserDefaults() {
     let data = NSKeyedArchiver.archivedData(withRootObject: remindersArray)
     UserDefaults.standard.set(data, forKey: "Reminders")
+    UserDefaults.standard.set(isShowCompleted, forKey: "isShowCompleted")
   }
   
   func getFileFromUserDefautls() {
     if let data = UserDefaults.standard.object(forKey: "Reminders") as? Data {
       remindersArray = NSKeyedUnarchiver.unarchiveObject(with: data) as! [Reminder]
     }
+    isShowCompleted = UserDefaults.standard.bool(forKey: "isShowCompleted")
   }
 }
 
@@ -320,7 +309,6 @@ extension MainViewController: UITextViewDelegate {
   }
   
   func textViewDidBeginEditing(_ textView: UITextView) {
-    isTextViewFocused = true
     editButton.isSelected = true
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
     // Show accessory when textview is focused
@@ -330,7 +318,6 @@ extension MainViewController: UITextViewDelegate {
   }
   
   func textViewDidEndEditing(_ textView: UITextView) {
-    isTextViewFocused = false
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
     cell?.accessoryType = .none
     
@@ -344,7 +331,6 @@ extension MainViewController: UITextViewDelegate {
         remindersArray[textView.tag].title = textView.text.substring(from: index)
       }
     }
-    //myTableView.reloadData()
   }
 }
 

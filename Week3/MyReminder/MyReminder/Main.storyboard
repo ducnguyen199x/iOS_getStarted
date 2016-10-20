@@ -55,11 +55,11 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="yOi-b1-UUu" firstAttribute="leading" secondItem="Jap-pn-LGM" secondAttribute="leadingMargin" constant="3" id="9fI-3J-aEw"/>
+                                        <constraint firstItem="yOi-b1-UUu" firstAttribute="leading" secondItem="Jap-pn-LGM" secondAttribute="leadingMargin" constant="20" id="9fI-3J-aEw"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="f2f-SA-ATy" secondAttribute="trailing" constant="8" id="bP0-yi-eLd"/>
                                         <constraint firstItem="yOi-b1-UUu" firstAttribute="centerY" secondItem="Jap-pn-LGM" secondAttribute="centerY" id="dG7-Nc-Lov"/>
                                         <constraint firstItem="yOi-b1-UUu" firstAttribute="centerY" secondItem="f2f-SA-ATy" secondAttribute="centerY" id="l1L-8N-4xI"/>
-                                        <constraint firstItem="f2f-SA-ATy" firstAttribute="leading" secondItem="yOi-b1-UUu" secondAttribute="trailing" constant="5" id="nvD-24-cUH"/>
+                                        <constraint firstItem="f2f-SA-ATy" firstAttribute="leading" secondItem="yOi-b1-UUu" secondAttribute="trailing" constant="20" id="nvD-24-cUH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -131,17 +131,12 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lUe-dC-kdT">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="YoY-ZP-ADa">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reminderCell" id="CKN-gn-kjU" customClass="ReminderCell" customModule="MyReminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CKN-gn-kjU" id="Ll3-cq-PuR">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nQA-Nf-ryZ">
@@ -198,12 +193,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="e0E-PI-F2H" secondAttribute="trailing" constant="10" id="6Sx-xw-yiZ"/>
                             <constraint firstItem="dKj-cr-JSX" firstAttribute="top" secondItem="loF-5A-t4Y" secondAttribute="bottom" constant="10" id="B4T-VS-SqY"/>
                             <constraint firstAttribute="trailing" secondItem="S6q-z6-cKm" secondAttribute="trailing" id="DD2-wI-dyQ"/>
+                            <constraint firstItem="lUe-dC-kdT" firstAttribute="top" secondItem="SgS-wY-lKE" secondAttribute="bottom" constant="10" id="Ncx-Dy-3mB"/>
                             <constraint firstItem="S6q-z6-cKm" firstAttribute="top" secondItem="lUe-dC-kdT" secondAttribute="bottom" id="SLv-GT-EQc"/>
                             <constraint firstItem="e0E-PI-F2H" firstAttribute="centerY" secondItem="dKj-cr-JSX" secondAttribute="centerY" id="Su4-aS-Qky"/>
-                            <constraint firstItem="lUe-dC-kdT" firstAttribute="top" secondItem="dKj-cr-JSX" secondAttribute="bottom" constant="28" id="UHF-76-LBc"/>
                             <constraint firstItem="lUe-dC-kdT" firstAttribute="leading" secondItem="c1w-Fl-XMG" secondAttribute="leading" id="dhl-9m-KTJ"/>
                             <constraint firstAttribute="trailing" secondItem="lUe-dC-kdT" secondAttribute="trailing" id="lM5-L0-cwm"/>
-                            <constraint firstItem="lUe-dC-kdT" firstAttribute="top" secondItem="SgS-wY-lKE" secondAttribute="bottom" id="lzQ-9A-maJ"/>
+                            <constraint firstItem="SgS-wY-lKE" firstAttribute="top" secondItem="e0E-PI-F2H" secondAttribute="bottom" constant="10" id="mw2-DR-SWN"/>
                             <constraint firstItem="dKj-cr-JSX" firstAttribute="leading" secondItem="c1w-Fl-XMG" secondAttribute="leadingMargin" constant="10" id="qlw-JU-W03"/>
                             <constraint firstItem="S6q-z6-cKm" firstAttribute="leading" secondItem="c1w-Fl-XMG" secondAttribute="leading" id="xeV-76-ijg"/>
                             <constraint firstItem="dEh-0G-kG8" firstAttribute="top" secondItem="S6q-z6-cKm" secondAttribute="bottom" id="z52-dA-tH2"/>
@@ -215,6 +210,7 @@
                         <outlet property="listLabel" destination="dKj-cr-JSX" id="TCF-Rv-Rwm"/>
                         <outlet property="myTableView" destination="lUe-dC-kdT" id="7Hs-uS-bIl"/>
                         <outlet property="numberOfRemindersLabel" destination="e0E-PI-F2H" id="wb9-an-XBR"/>
+                        <outlet property="showButton" destination="S6q-z6-cKm" id="tf1-t0-pkW"/>
                         <segue destination="nFU-uJ-QCD" kind="show" identifier="showDetailsView" id="9IX-rL-iNF"/>
                         <segue destination="zwa-YB-Afc" kind="show" identifier="showColorView" id="GYc-Fh-mTG"/>
                     </connections>
@@ -331,7 +327,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nxq-Ck-y22">
-                                                    <frame key="frameInset" height="227" maxX="4"/>
+                                                    <frame key="frameInset" minX="-1" height="227" maxX="4"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="498022908.76701301">
                                                         <!--2016-10-13 03:41:48 +0000-->

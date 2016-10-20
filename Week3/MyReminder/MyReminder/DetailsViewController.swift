@@ -14,7 +14,6 @@ class DetailsViewController: UITableViewController {
   var isDatePickerHidden = true
   var delegate: DetailsViewDelegate?
   var reminder: Reminder?
-  var backupReminder = Reminder.init(title: "backup")
   
   @IBOutlet var titleTextView: UITextView!
   @IBOutlet var datePicker: UIDatePicker!
@@ -34,7 +33,7 @@ class DetailsViewController: UITableViewController {
     if let date = reminder?.remindDay {
       datePicker.date = date
     }
-    backupReminder.save(title: titleTextView.text, willRemindByDay: remindByDaySwitch.isOn, willRemindAtLocation: remindAtLocationSwitch.isOn, repeatedTime: 0, note: noteTextView.text, remindDay: datePicker.date, priority: prioritySegment.selectedSegmentIndex)
+
     self.navigationItem.title = "Details"
     self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Done", style: .plain, target: self, action: #selector(saveReminder))
     updateDatePicker()
