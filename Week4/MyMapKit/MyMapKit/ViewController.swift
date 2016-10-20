@@ -50,6 +50,7 @@ extension ViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     guard let address = searchTextField.text else { return }
     
+    //geocoding using address in text field
     geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
       guard let placemarks = placemarks else { return }
       
