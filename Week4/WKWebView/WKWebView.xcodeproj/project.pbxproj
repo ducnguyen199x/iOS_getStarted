@@ -505,6 +505,7 @@
 				F82F18321DB7501D0018ECE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F82F18331DB7501D0018ECE3 /* Build configuration list for PBXNativeTarget "WKWebViewTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				F82F18351DB7501D0018ECE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F82F18361DB7501D0018ECE3 /* Build configuration list for PBXNativeTarget "WKWebViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +523,7 @@
 				F82F18381DB7501D0018ECE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
