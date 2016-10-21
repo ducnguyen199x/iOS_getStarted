@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82AB49F1DB9D42C007C962F /* CustomRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82AB49E1DB9D42C007C962F /* CustomRepeatView.swift */; };
 		F82E81BC1DB5CC6E0011F4DB /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E81BB1DB5CC6E0011F4DB /* ColorCell.swift */; };
 		F82E81BE1DB5CCFC0011F4DB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E81BD1DB5CCFC0011F4DB /* ColorViewController.swift */; };
 		F82E81C01DB5E39D0011F4DB /* HeaderColor.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82E81BF1DB5E39D0011F4DB /* HeaderColor.xib */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F82AB49E1DB9D42C007C962F /* CustomRepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRepeatView.swift; sourceTree = "<group>"; };
 		F82E81BB1DB5CC6E0011F4DB /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		F82E81BD1DB5CCFC0011F4DB /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		F82E81BF1DB5E39D0011F4DB /* HeaderColor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderColor.xib; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				F82FDCC41DAF8E1800809D5F /* Main.storyboard */,
+				F82AB49E1DB9D42C007C962F /* CustomRepeatView.swift */,
 				F82E81BD1DB5CCFC0011F4DB /* ColorViewController.swift */,
 				F8F848691DADE13F00EA321C /* AppDelegate.swift */,
 				F82E81BB1DB5CC6E0011F4DB /* ColorCell.swift */,
@@ -300,6 +303,7 @@
 				F8F8486C1DADE13F00EA321C /* MainViewController.swift in Sources */,
 				F82E81C41DB60D3E0011F4DB /* HeaderViewController.swift in Sources */,
 				F8F8486A1DADE13F00EA321C /* AppDelegate.swift in Sources */,
+				F82AB49F1DB9D42C007C962F /* CustomRepeatView.swift in Sources */,
 				F8CA41D41DAE202B008DDE6A /* ButtonBorder.swift in Sources */,
 				F82FDCC31DAF3F5600809D5F /* DetailsViewController.swift in Sources */,
 				F8F8489A1DADF42B00EA321C /* ReminderCell.swift in Sources */,

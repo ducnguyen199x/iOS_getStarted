@@ -65,7 +65,6 @@ class DetailsViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if indexPath.section == 1 && indexPath.row == 1 {
       toggleDatePicker()
-      tableView.deselectRow(at: indexPath, animated: true)
     }
     tableView.deselectRow(at: indexPath, animated: true)
   }

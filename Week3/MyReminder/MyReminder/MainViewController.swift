@@ -50,6 +50,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   var selectedRowIndex: Int?
   var isShowCompleted = false
   var selectedIndex = 0
+  var isTextfieldFocused = false
   
   @IBOutlet var showButton: UIButton!
   @IBOutlet var listLabel: UILabel!
@@ -129,6 +130,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
       cell.toNormalCellFormat()
       cell.completedButton.setBackgroundColor(color: themeColor.color(), forState: .selected)
       
+      //display priority before title name
       var priorityString = remindersArray[indexPath.row].getPriority()
     
       let attributedString = NSMutableAttributedString.init(string: "\(priorityString)\(remindersArray[indexPath.row].title)")
@@ -140,6 +142,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
       cell.titleTextView.attributedText = attributedString
       cell.completedButton.isSelected = remindersArray[indexPath.row].isCompleted
       
+      //disable button and textview when view is editing
       if myTableView.isEditing {
         cell.completedButton.isEnabled = false
         cell.titleTextView.isEditable = false
@@ -167,22 +170,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   // Accessory tapped
   func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-    let cell = tableView.cellForRow(at: indexPath) as! ReminderCell
-    
-    if indexPath.row > remindersArray.count - 1 {
-      createReminder(title: cell.titleTextView.text)
-    } else if cell.titleTextView.text != "" {
-      let priority = remindersArray[indexPath.row].priority
-      let index = cell.titleTextView.text.index(cell.titleTextView.text.startIndex, offsetBy: priority)
-      remindersArray[indexPath.row].title = cell.titleTextView.text.substring(from: index)
-    }
+    myTableView.endEditing(true)
     selectedIndex = indexPath.row
     self.performSegue(withIdentifier: "showDetailsView", sender: self)
   }
- 
+  
   // commit delete
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     remindersArray[indexPath.row].cancelNotification()
+    
     if editButton.isSelected {
       tableView.beginUpdates()
       tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -192,16 +188,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
       tableView.deleteRows(at: [indexPath], with: .automatic)
       remindersArray.remove(at: indexPath.row)
     }
+    
     updateNumberOfReminders()
   }
+
   
   func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
     return true
   }
   
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-    guard editButton.isSelected == false else {
-      //if text view is focusing, just return
+    guard isTextfieldFocused == false else {
       return false
     }
     
@@ -224,7 +221,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     if editButton.isSelected && !myTableView.isEditing {
       myTableView.endEditing(true)
       sender.isSelected = !sender.isSelected
-      return
     } else {
       showButton.isHidden = !showButton.isHidden
       sender.isSelected = !sender.isSelected
@@ -261,9 +257,10 @@ extension MainViewController {
   func createReminder(title: String) {
     let newReminder = Reminder.init(title: title)
     remindersArray.append(newReminder)
+    
+    //update view
     myTableView.insertRows(at: [IndexPath(row:remindersArray.count - 1, section: 0)], with: .automatic)
     myTableView.reloadRows(at: [IndexPath(row: remindersArray.count, section: 0)], with: .automatic)
-    numberOfRemindersLabel.text = "\(remindersArray.count)"
     updateNumberOfReminders()
   }
   
@@ -310,6 +307,7 @@ extension MainViewController: UITextViewDelegate {
   
   func textViewDidBeginEditing(_ textView: UITextView) {
     editButton.isSelected = true
+    isTextfieldFocused = true
     let cell = myTableView.cellForRow(at: IndexPath(row: textView.tag, section: 0))
     // Show accessory when textview is focused
     if textView.tag <= remindersArray.count - 1 {
@@ -331,6 +329,8 @@ extension MainViewController: UITextViewDelegate {
         remindersArray[textView.tag].title = textView.text.substring(from: index)
       }
     }
+    
+    isTextfieldFocused = false
   }
 }
 
@@ -338,6 +338,7 @@ extension MainViewController: UITextViewDelegate {
 extension MainViewController: DetailsViewDelegate {
   func saveDetails(index: Int) {
     myTableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    editButton.isSelected = false
   }
 }
 
