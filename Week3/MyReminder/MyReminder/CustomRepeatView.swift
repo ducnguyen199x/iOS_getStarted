@@ -15,10 +15,12 @@ class CustomRepeatView: UITableViewController {
   
   @IBOutlet var everyPicker: UIPickerView!
   
-  var isFrequencySelected = true
-  var isEverySelected = true
+  var isFrequencySelected = false
+  var isEverySelected = false
   var frequencyArray = ["Daily", "Weekly", "Monthly", "Yearly"]
+  var timeUnitArray = ["day", "week", "month", "year"]
   var everyArray: [Int] = []
+  var selectedFrequency = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,6 +30,10 @@ class CustomRepeatView: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    if frequencyArray[selectedFrequency] == "Daily" && indexPath.section == 1{
+      return 0
+    }
     
     if !isFrequencySelected  && indexPath.section == 0 && indexPath.row == 1 {
       return 0
@@ -48,7 +54,7 @@ class CustomRepeatView: UITableViewController {
     }
     tableView.deselectRow(at: indexPath, animated: true)
   }
-  
+
   func toggleFrequencyPicker() {
     tableView.beginUpdates()
     isFrequencySelected = !isFrequencySelected
@@ -68,12 +74,15 @@ extension CustomRepeatView: UIPickerViewDataSource {
     if pickerView.tag == 1 {
       return frequencyArray.count
     } else if pickerView.tag == 2 {
-      return everyArray.count
+      return component == 0 ? everyArray.count : 1
     }
     return 1
   }
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    if pickerView.tag == 2 {
+      return 2
+    }
     return 1
   }
 }
@@ -81,14 +90,19 @@ extension CustomRepeatView: UIPickerViewDataSource {
 // MARK: UIPickerViewDelegate
 extension CustomRepeatView: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    print(row)
+    if pickerView.tag == 1 {
+      selectedFrequency = row
+      everyPicker.reloadAllComponents()
+      tableView.beginUpdates()
+      tableView.endUpdates()
+    }
   }
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     if pickerView.tag == 1 {
       return frequencyArray[row]
     } else if pickerView.tag == 2 {
-      return "\(everyArray[row])"
+      return component == 0 ? "\(everyArray[row])" : timeUnitArray[selectedFrequency]
     }
     return ""
   }

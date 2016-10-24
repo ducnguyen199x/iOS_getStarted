@@ -38,7 +38,7 @@
 		F80FA79E1DB8B524007CE7BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F80FA7A01DB8B524007CE7BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F80FA7A31DB8B524007CE7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F80FA7A51DB8B524007CE7BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F80FA7A51DB8B524007CE7BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Gesture/Assets.xcassets; sourceTree = "<group>"; };
 		F80FA7A81DB8B524007CE7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F80FA7AA1DB8B524007CE7BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80FA7AF1DB8B524007CE7BF /* GestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F80FA79D1DB8B524007CE7BF /* Gesture */,
+				F80FA7A51DB8B524007CE7BF /* Assets.xcassets */,
 				F80FA7B21DB8B524007CE7BF /* GestureTests */,
 				F80FA7BD1DB8B524007CE7BF /* GestureUITests */,
 				F80FA79C1DB8B524007CE7BF /* Products */,
@@ -100,7 +101,6 @@
 				F80FA79E1DB8B524007CE7BF /* AppDelegate.swift */,
 				F80FA7A01DB8B524007CE7BF /* ViewController.swift */,
 				F80FA7A21DB8B524007CE7BF /* Main.storyboard */,
-				F80FA7A51DB8B524007CE7BF /* Assets.xcassets */,
 				F80FA7A71DB8B524007CE7BF /* LaunchScreen.storyboard */,
 				F80FA7AA1DB8B524007CE7BF /* Info.plist */,
 			);
