@@ -10,17 +10,17 @@
         <!--Table View Controller-->
         <scene sceneID="5Cg-0K-wI6">
             <objects>
-                <tableViewController id="nlb-Fb-FuH" customClass="TableViewController" customModule="MyRealm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="nlb-Fb-FuH" customClass="TableViewController" customModule="MyRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="t2m-yH-jAe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="61" id="2uM-gA-wPJ" customClass="PetCell" customModule="MyRealm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="48" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2uM-gA-wPJ" id="QNI-Ud-cK6">
-                                    <frame key="frameInset" width="375" height="60"/>
+                                    <frame key="frameInset" width="375" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuZ-7V-lKQ">
@@ -64,10 +64,11 @@
                             <outlet property="delegate" destination="nlb-Fb-FuH" id="gWd-e5-dWz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="6yi-w0-h8Z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5f-Bl-Mnl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29.600000000000001" y="74.212893553223395"/>
+            <point key="canvasLocation" x="968.79999999999995" y="74.212893553223395"/>
         </scene>
     </scenes>
 </document>

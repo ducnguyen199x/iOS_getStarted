@@ -12,21 +12,23 @@ import RealmSwift
 class TableViewController: UITableViewController {
   
   let realm = try! Realm()
-  var pets: [Pet] = []
+  var pets: [Animal] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let pikachu = Pet()
+    let pikachu = Animal()
     pikachu.name = "Tuan"
     pikachu.species = "Pikachu"
-    pikachu.age = 5
+    pikachu.age = 2
     
     try! realm.write {
-      realm.add(pikachu)
+      realm.add(pikachu, update: true)
+//      realm.delete(pikachu)
+//      realm.create(Animal.self, value: ["Sinh", 4, "Monkey"], update: false)
     }
     
-    let data = realm.objects(Pet.self)
+    let data = realm.objects(Animal.self)
     pets = Array(data)
   }
 

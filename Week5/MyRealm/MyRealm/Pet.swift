@@ -9,12 +9,12 @@
 import Foundation
 import RealmSwift
 
-class Pet: Object {
+class Animal: Object {
   dynamic var name = ""
   dynamic var age = 0
   dynamic var species = ""
   
-//  override static func primaryKey() -> String? {
-//    return "name"
-//  }
+  override static func primaryKey() -> String? {
+    return "name"
+  }
 }
