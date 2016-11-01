@@ -49,7 +49,7 @@ class SearchViewController: UIViewController {
     searchResults.removeAll()
     do {
       if let data = data, let response = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions(rawValue:0)) as? [String: AnyObject] {
-        
+        print(response)
         // Get the results array
         if let array: AnyObject = response["results"] {
           for trackDictonary in array as! [AnyObject] {
