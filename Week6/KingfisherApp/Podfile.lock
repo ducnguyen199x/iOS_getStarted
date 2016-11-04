@@ -1,12 +1,15 @@
 PODS:
+  - FLEX (2.4.0)
   - Kingfisher (3.1.4)
 
 DEPENDENCIES:
+  - FLEX (~> 2.0)
   - Kingfisher
 
 SPEC CHECKSUMS:
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
 
-PODFILE CHECKSUM: 2b5886ed80f8c1df24ed9b05480eddcfda0eff0b
+PODFILE CHECKSUM: ecfddcbb522dd0b23cd552c7d75f868b5b69d785
 
 COCOAPODS: 1.1.1

@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import FLEX
 
 class ViewController: UIViewController {
 
@@ -39,6 +40,10 @@ class ViewController: UIViewController {
       let percentage = Float(received) / Float(total) * 100
       self.progressView2.progress = percentage
     })
+    
+    #if DEBUG
+      FLEXManager.shared().showExplorer()
+    #endif
   }
 
   override func didReceiveMemoryWarning() {

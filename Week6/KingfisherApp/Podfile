@@ -7,6 +7,7 @@ target 'KingfisherApp' do
 
   # Pods for KingfisherApp
   pod 'Kingfisher'
+  pod 'FLEX', '~> 2.0', :configurations => ['Debug']
 
   target 'KingfisherAppTests' do
     inherit! :search_paths
